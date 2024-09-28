@@ -1,0 +1,115 @@
+$light: #fffcf2;
+$lightdark: #ccc5b9;
+$darklight: #403d39;
+$dark: #252422;
+$accent: #eb5e28;
+$black: #000000;
+$navHeight: 45px;
+$navLinkFontSize: 2rem;
+
+@font-face {
+  font-family: "Typographica";
+  src: url("/Typographica-Blp5.ttf") format("truetype");
+}
+
+nav {
+  transform-origin: left bottom;
+  transform: rotate(90deg);
+  -webkit-transform-origin: left bottom;
+  -webkit-transform: rotate(90deg);
+  position: fixed;
+  top: -$navHeight;
+  left: calc(100vw - $navHeight);
+  width: 100vh;
+  height: $navHeight;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+a {
+
+  font-size: $navLinkFontSize;
+}
+li {
+  height: $navLinkFontSize;
+  overflow: hidden;  
+}
+.before {
+  color:blue;
+}
+.after {color:green}
+
+.hero {
+  background-color: $light;
+  min-height: 100vh;
+  width: 100vw;
+
+  .heroAnim {
+    color: $black;
+    font-size: 300px;
+    margin-top: -55px;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
+
+  h2 {
+    font-size: 50px;
+    font-weight: 200;
+    font-family: "Typographica", sans-serif;
+    margin-top: -60px;
+    margin-left: 7px;
+  }
+}
+a {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+a::before,
+a::after {
+ content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+a::before {
+  background-color: #54b3d6;
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+a::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+  color: #54b3d6;
+}
+
+a:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+a:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+a span {
+  display: inline-block;
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+a:hover span {
+  transform: translate3d(-200%, 0, 0);
+}

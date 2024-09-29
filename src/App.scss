@@ -37,7 +37,7 @@ $animationProps: $speed linear infinite alternate;
   background-color: $light;
 }
 .contact {
-  background-color: $darklight;
+  background-color: $dark;
 }
 
 //===================================================================================//
@@ -328,13 +328,15 @@ $time: 4s;
 $scale: 1.1;
 
 .juggleContainer {
+  transform: scale(0.5);
+  // opacity: 0.5;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding-top: 5em;
-.hands {
-  width: 100%;
-}
+  .hands {
+    width: 100%;
+  }
   .preload-juggle {
     width: $boxWidth;
     height: $boxWidth;
@@ -401,6 +403,65 @@ $scale: 1.1;
     }
     100% {
       transform: translateX(0px) translateY(0px);
+    }
+  }
+}
+
+//===================================================================================//
+//contact
+.contact {
+  color:white;
+  .page {
+    position: relative;
+  }
+  // .left {
+  //   height: 100%;
+  //   width: 30%;
+  //   background-color: $accent;
+  // }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // border: 1px solid blue;
+    height: 100%;
+    width: 100%;
+
+    h2 {
+      color:white;
+      font-size:5rem;
+      // font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left:0.5em;
+      input {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        border: 1px solid white;
+        width: 70%;
+        max-width: 500px;
+        font-size: 1.5rem;
+        // margin-bottom: 2em;
+        padding: 0.7em;
+        color:white;
+        & ::placeholder {
+          color:red;
+          opacity: 1;
+        }
+      }
+      button {
+        background-color: white;
+        font-size: 2rem;
+        outline: none;
+        border:none;
+        padding: 0.5em 1em 0.6em 1em;
+        font-weight: 900;
+        margin-top: 0.5em
+      }
     }
   }
 }

@@ -1,6 +1,8 @@
+import { HeroText } from "./HeroText";
+
 export const HeroAnim = () => {
-  return (
-    <h1 className="heroAnim">HI</h1>)
+  return (<div className="heroAnim"> <h1>HI</h1><HeroText/></div>
+   )
     {/*<svg
       xmlns="http://www.w3.org/2000/svg"
       width="1436px"

@@ -12,6 +12,14 @@ $navLinkFontSize: 2rem;
   src: url("/Typographica-Blp5.ttf") format("truetype");
 }
 
+.page {
+  width: 100%;
+  max-width: 850px;
+}
+
+//===================================================================================//
+//NAV
+
 nav {
   transform-origin: left bottom;
   transform: rotate(90deg);
@@ -25,91 +33,230 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+  }
+
+  a {
+    color: $black;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  a::before,
+  a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+  a::before {
+    background-color: $accent;
+    height: 2px;
+    bottom: 0;
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  a::after {
+    content: attr(data-replace);
+    height: 100%;
+    top: 0;
+    transform-origin: 100% 50%;
+    transform: translate3d(200%, 0, 0);
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+    color: $accent;
+  }
+
+  a:hover::before {
+    transform-origin: 0% 50%;
+    transform: scaleX(1);
+  }
+  a:hover::after {
+    transform: translate3d(0, 0, 0);
+  }
+
+  a span {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  a:hover span {
+    transform: translate3d(-200%, 0, 0);
+  }
 }
 
-ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 70%;
-}
-a {
+@media screen and (min-width: 850px) {
+  nav {  left: calc(850px - $navHeight + (100vw - 850px)/2);
+  }  
+  // left: calc(100vw - $navHeight);
 
-  font-size: $navLinkFontSize;
+
 }
-li {
-  height: $navLinkFontSize;
-  overflow: hidden;  
+.section {
+    min-height: 100vh;
+  width: 100%;
+
 }
-.before {
-  color:blue;
-}
-.after {color:green}
+//===================================================================================//
+//HERO
 
 .hero {
   background-color: $light;
-  min-height: 100vh;
-  width: 100vw;
+  display: flex;justify-content: center;
 
   .heroAnim {
+    margin-top: 50vh;
+    transform: translateY(-50%);
+
     color: $black;
-    font-size: 300px;
-    margin-top: -55px;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    width: 242px;
+    h1 {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      line-height: 0.8em;
+      font-size: inherit;
+      font-size: 30rem;
+    }
+    p {
+      font-size: 2.4rem;
+      float: right;
+    }
   }
 
-  h2 {
-    font-size: 50px;
-    font-weight: 200;
-    font-family: "Typographica", sans-serif;
-    margin-top: -60px;
-    margin-left: 7px;
+//===================================================================================//
+//arrow anim
+
+  .arrows {
+    width: 60px;
+    height: 72px;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    bottom: 20px;
+  }
+  
+  .arrows path {
+    stroke: $accent;
+    fill: $accent;
+    stroke-width: 1px;  
+    animation: arrow 0.5s infinite;
+    -webkit-animation: arrow 2s infinite; 
+  }
+  
+  @keyframes arrow
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+  
+  @-webkit-keyframes arrow /*Safari and Chrome*/
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+  
+  .arrows path.a1 {
+    animation-delay:-1s;
+    -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+  }
+  
+  .arrows path.a2 {
+    animation-delay:-0.5s;
+    -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+  }
+  
+  .arrows path.a3 { 
+    animation-delay:0s;
+    -webkit-animation-delay:0s; /* Safari 和 Chrome */
   }
 }
-a {
-  overflow: hidden;
+
+//===================================================================================//
+//focus anim
+
+$componentSize: 300px;
+$maskSize: 170px;
+$speed: 2s;
+$borderOffset: 8px;
+$backgroundColor: $accent;
+$animationProps: $speed linear infinite alternate;
+
+@keyframes mask-move {
+  0%   { 
+    transform: translateX(10px);
+  }
+  100% { 
+    transform: translateX($componentSize - $maskSize);
+  }
+}
+
+@keyframes mask-inner-move {
+  0%   { 
+    transform: translateX(20px);
+  }
+  100% { 
+    transform: translateX(-($componentSize - $maskSize));
+  }
+}
+
+.focus {
+  margin-top:1em;
+  font-size: 3rem;
+  color: #000;
+  letter-spacing: .2rem;
+  line-height: 1;
   position: relative;
-  display: inline-block;
+  padding-left:10px;
+  width: $componentSize;
+  &:before {
+      content: '  im zahra';
+      filter: blur(3px);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    width: $maskSize;
+    height: calc(100% + #{$borderOffset});
+    top: -($borderOffset / 2);
+    left: 0;
+    // border-top: 2px solid;
+    border-bottom: 2px solid;
+    animation: mask-move $animationProps;
+  }
+  &--mask {
+    overflow: hidden;
+    position: absolute;
+    width: $maskSize;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: $backgroundColor;
+    animation: mask-move $animationProps;
+    &-inner {
+      animation: mask-inner-move $animationProps;
+    }
+  }
 }
 
-a::before,
-a::after {
- content: '';
-  position: absolute;
-  width: 100%;
-  left: 0;
-}
-a::before {
-  background-color: #54b3d6;
-  height: 2px;
-  bottom: 0;
-  transform-origin: 100% 50%;
-  transform: scaleX(0);
-  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-}
-a::after {
-  content: attr(data-replace);
-  height: 100%;
-  top: 0;
-  transform-origin: 100% 50%;
-  transform: translate3d(200%, 0, 0);
-  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-  color: #54b3d6;
-}
 
-a:hover::before {
-  transform-origin: 0% 50%;
-  transform: scaleX(1);
-}
-a:hover::after {
-  transform: translate3d(0, 0, 0);
-}
+//===================================================================================//
+//work
 
-a span {
-  display: inline-block;
-  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-}
+.work {
+  background-color: $dark;
 
-a:hover span {
-  transform: translate3d(-200%, 0, 0);
+  a {
+    color: white
+  }
 }

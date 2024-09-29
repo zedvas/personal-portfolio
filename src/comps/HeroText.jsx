@@ -1,3 +1,9 @@
 export const HeroText = () => {
-    return ( <h2>i'm zahra vasanji</h2> );
-}
+  return (
+    <div class="focus">
+      <div class="focus--mask">
+        <div class="focus--mask-inner">im zahra</div>
+      </div>
+    </div>
+  );
+};

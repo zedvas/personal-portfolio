@@ -6,15 +6,38 @@ $accent: #eb5e28;
 $black: #000000;
 $navHeight: 45px;
 $navLinkFontSize: 2rem;
+$componentSize: 300px;
+$maskSize: 170px;
+$speed: 2s;
+$borderOffset: 8px;
+$backgroundColor: $accent;
+$animationProps: $speed linear infinite alternate;
 
 @font-face {
   font-family: "Typographica";
   src: url("/Typographica-Blp5.ttf") format("truetype");
 }
-
+.section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .page {
   width: 100%;
   max-width: 850px;
+}
+.home {
+  background-color: $lightdark;
+}
+.work {
+  background-color: $darklight;
+}
+.about {
+  background-color: $light;
+}
+.contact {
+  background-color: $darklight;
 }
 
 //===================================================================================//
@@ -93,25 +116,10 @@ nav {
   }
 }
 
-@media screen and (min-width: 850px) {
-  nav {  left: calc(850px - $navHeight + (100vw - 850px)/2);
-  }  
-  // left: calc(100vw - $navHeight);
-
-
-}
-.section {
-    min-height: 100vh;
-  width: 100%;
-
-}
 //===================================================================================//
 //HERO
 
-.hero {
-  background-color: $light;
-  display: flex;justify-content: center;
-
+.home {
   .heroAnim {
     margin-top: 50vh;
     transform: translateY(-50%);
@@ -130,8 +138,68 @@ nav {
     }
   }
 
-//===================================================================================//
-//arrow anim
+  //===================================================================================//
+  //focus anim
+
+  @keyframes mask-move {
+    0% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX($componentSize - $maskSize);
+    }
+  }
+
+  @keyframes mask-inner-move {
+    0% {
+      transform: translateX(20px);
+    }
+    100% {
+      transform: translateX(-($componentSize - $maskSize));
+    }
+  }
+
+  .focus {
+    margin-top: 1em;
+    font-size: 3rem;
+    color: #000;
+    letter-spacing: 0.2rem;
+    line-height: 1;
+    position: relative;
+    padding-left: 10px;
+    width: $componentSize;
+    &:before {
+      content: "  im zahra";
+      filter: blur(3px);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: $maskSize;
+      height: calc(100% + #{$borderOffset});
+      top: calc($borderOffset / -2);
+      left: 0;
+      // border-top: 2px solid;
+      border-bottom: 2px solid;
+      animation: mask-move $animationProps;
+    }
+    &--mask {
+      overflow: hidden;
+      position: absolute;
+      width: $maskSize;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: $backgroundColor;
+      animation: mask-move $animationProps;
+      &-inner {
+        animation: mask-inner-move $animationProps;
+      }
+    }
+  }
+
+  //===================================================================================//
+  //arrow anim
 
   .arrows {
     width: 60px;
@@ -141,122 +209,198 @@ nav {
     margin-left: -30px;
     bottom: 20px;
   }
-  
+
   .arrows path {
     stroke: $accent;
     fill: $accent;
-    stroke-width: 1px;  
+    stroke-width: 1px;
     animation: arrow 0.5s infinite;
-    -webkit-animation: arrow 2s infinite; 
+    -webkit-animation: arrow 2s infinite;
   }
-  
-  @keyframes arrow
-  {
-  0% {opacity:0}
-  40% {opacity:1}
-  80% {opacity:0}
-  100% {opacity:0}
-  }
-  
-  @-webkit-keyframes arrow /*Safari and Chrome*/
-  {
-  0% {opacity:0}
-  40% {opacity:1}
-  80% {opacity:0}
-  100% {opacity:0}
-  }
-  
-  .arrows path.a1 {
-    animation-delay:-1s;
-    -webkit-animation-delay:-1s; /* Safari 和 Chrome */
-  }
-  
-  .arrows path.a2 {
-    animation-delay:-0.5s;
-    -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
-  }
-  
-  .arrows path.a3 { 
-    animation-delay:0s;
-    -webkit-animation-delay:0s; /* Safari 和 Chrome */
-  }
-}
 
-//===================================================================================//
-//focus anim
-
-$componentSize: 300px;
-$maskSize: 170px;
-$speed: 2s;
-$borderOffset: 8px;
-$backgroundColor: $accent;
-$animationProps: $speed linear infinite alternate;
-
-@keyframes mask-move {
-  0%   { 
-    transform: translateX(10px);
-  }
-  100% { 
-    transform: translateX($componentSize - $maskSize);
-  }
-}
-
-@keyframes mask-inner-move {
-  0%   { 
-    transform: translateX(20px);
-  }
-  100% { 
-    transform: translateX(-($componentSize - $maskSize));
-  }
-}
-
-.focus {
-  margin-top:1em;
-  font-size: 3rem;
-  color: #000;
-  letter-spacing: .2rem;
-  line-height: 1;
-  position: relative;
-  padding-left:10px;
-  width: $componentSize;
-  &:before {
-      content: '  im zahra';
-      filter: blur(3px);
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    width: $maskSize;
-    height: calc(100% + #{$borderOffset});
-    top: -($borderOffset / 2);
-    left: 0;
-    // border-top: 2px solid;
-    border-bottom: 2px solid;
-    animation: mask-move $animationProps;
-  }
-  &--mask {
-    overflow: hidden;
-    position: absolute;
-    width: $maskSize;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: $backgroundColor;
-    animation: mask-move $animationProps;
-    &-inner {
-      animation: mask-inner-move $animationProps;
+  @keyframes arrow {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
     }
   }
+
+  @-webkit-keyframes arrow /*Safari and Chrome*/ {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .arrows path.a1 {
+    animation-delay: -1s;
+    -webkit-animation-delay: -1s; /* Safari 和 Chrome */
+  }
+
+  .arrows path.a2 {
+    animation-delay: -0.5s;
+    -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
+  }
+
+  .arrows path.a3 {
+    animation-delay: 0s;
+    -webkit-animation-delay: 0s; /* Safari 和 Chrome */
+  }
+}
+//===================================================================================//
+//about section
+.about {
+  .page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  video {
+    align-self: center;
+  }
+  .desc {
+    width: calc(100vw - $navHeight - 1em);
+    max-width: 400px;
+    font-size: 1.1rem;
+    margin-top: 1em;
+  }
 }
 
+//===================================================================================//
+//text change anim
+
+.textChangeAnim {
+  width: calc(100% - $navHeight);
+  font-size: 3rem;
+  letter-spacing: -0.1rem;
+  color: $black;
+  font-weight: 800;
+
+  span {
+    color: $accent;
+    font-weight: 900;
+  }
+}
 
 //===================================================================================//
-//work
+//media queries
 
-.work {
-  background-color: $dark;
+@media screen and (min-width: 850px) {
+  nav {
+    left: calc(850px - $navHeight + (100vw - 850px) / 2);
+  }
+}
 
-  a {
-    color: white
+@media screen and (min-width: 600px) {
+  .focus {
+    margin-left: 8em;
+    margin-top: -50%;
+  }
+  h1 {
+    margin-top: calc($maskSize / -2);
+  }
+}
+
+//===================================================================================//
+//juggle anim
+
+$boxWidth: 100px;
+$ballWidth: 50px;
+$translateX: 70px;
+$translateY: 80px;
+$time: 4s;
+$scale: 1.1;
+
+.juggleContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 5em;
+.hands {
+  width: 100%;
+}
+  .preload-juggle {
+    width: $boxWidth;
+    height: $boxWidth;
+    position: absolute;
+    margin-right: 50px;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: $ballWidth;
+      height: $ballWidth;
+      border-radius: 50%;
+      background: $light;
+      margin-top: calc($boxWidth/2);
+      margin-left: calc($boxWidth/2);
+      animation: juggle $time linear infinite;
+
+      svg {
+        margin: 1em;
+      }
+    }
+
+    div:nth-child(1) {
+      animation-delay: calc($time/-3);
+    }
+
+    div:nth-child(2) {
+      animation-delay: calc($time/-1.5);
+    }
+  }
+
+  @keyframes juggle {
+    0% {
+      transform: translateX(0px) translateY(0px);
+    }
+    12.5% {
+      transform: translateX(calc($translateX/2)) translateY(-$translateY)
+        scale($scale);
+      background: $accent;
+    }
+    25% {
+      transform: translateX($translateX) translateY(0px);
+      animation-timing-function: ease-out;
+    }
+    37.5% {
+      transform: translateX(calc($translateX/2)) translateY($translateY);
+    }
+    50% {
+      transform: translateX(0px) translateY(0px);
+    }
+    62.5% {
+      transform: translateX(calc($translateX/-2)) translateY(-$translateY)
+        scale($scale);
+      animation-timing-function: ease-in;
+    }
+    75% {
+      transform: translateX(-$translateX) translateY(0px);
+      animation-timing-function: ease-out;
+    }
+    87.5% {
+      transform: translateX(calc($translateX/-2)) translateY($translateY);
+    }
+    100% {
+      transform: translateX(0px) translateY(0px);
+    }
   }
 }

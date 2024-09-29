@@ -3,9 +3,9 @@ import { HeroText } from "../comps/HeroText";
 import { HeroVideo } from "../comps/HeroVideo";
 import { PageDown } from "../comps/PageDown";
 
-export const Hero = () => {
+export const Home = () => {
   return (
-    <div className="hero section">
+    <div className="home section" id="home">
       <div className="page">
         <HeroAnim />
         {/* <HeroVideo/> */}

@@ -8,6 +8,7 @@ nav {
     -webkit-transform-origin: left bottom;
     -webkit-transform: rotate(90deg);
     position: fixed;
+    z-index:9;
     top: -$navHeight;
     left: calc(100vw - $navHeight);
     width: 100vh;
@@ -15,6 +16,9 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    mix-blend-mode: difference;
+      color: hsl(0, 0%, 100%);
+
   
     ul {
       display: flex;
@@ -24,7 +28,6 @@ nav {
     }
   
     a {
-      color: $black;
       overflow: hidden;
       position: relative;
       display: inline-block;

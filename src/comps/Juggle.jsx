@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../styles/juggle.scss";
 
 export const Juggle = () => {
   const [count, setCount] = useState(0);

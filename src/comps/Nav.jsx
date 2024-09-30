@@ -1,4 +1,5 @@
 import { NavLink } from "./NavLink";
+import '../styles/nav.scss';
 
 export const Nav = () => {
   const navLinks = ["home", "about", "work", "contact"];

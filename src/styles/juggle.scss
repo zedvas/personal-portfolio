@@ -1,0 +1,95 @@
+@import "variables";
+
+//===================================================================================//
+//juggle anim
+
+$boxWidth: 100px;
+$ballWidth: 50px;
+$translateX: 70px;
+$translateY: 80px;
+$time: 4s;
+$scale: 1.1;
+
+.juggleContainer {
+  margin-top: -200px;
+  margin-bottom: -200px;
+
+  transform: scale(0.5);
+  // opacity: 0.5;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 5em;
+  .hands {
+    width: 100%;
+  }
+  .preload-juggle {
+    width: $boxWidth;
+    height: $boxWidth;
+    position: absolute;
+    margin-right: 50px;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: $ballWidth;
+      height: $ballWidth;
+      border-radius: 50%;
+      background: $light;
+      margin-top: calc($boxWidth/2);
+      margin-left: calc($boxWidth/2);
+      animation: juggle $time linear infinite;
+
+      svg {
+        padding: 0.2em;
+        border-radius: 50%;
+      }
+    }
+
+    div:nth-child(1) {
+      animation-delay: calc($time/-3);
+    }
+
+    div:nth-child(2) {
+      animation-delay: calc($time/-1.5);
+    }
+  }
+
+  @keyframes juggle {
+    0% {
+      transform: translateX(0px) translateY(0px);
+    }
+    12.5% {
+      transform: translateX(calc($translateX/2)) translateY(-$translateY)
+        scale($scale);
+      background: $accent;
+    }
+    25% {
+      transform: translateX($translateX) translateY(0px);
+      animation-timing-function: ease-out;
+    }
+    37.5% {
+      transform: translateX(calc($translateX/2)) translateY($translateY);
+    }
+    50% {
+      transform: translateX(0px) translateY(0px);
+    }
+    62.5% {
+      transform: translateX(calc($translateX/-2)) translateY(-$translateY)
+        scale($scale);
+      animation-timing-function: ease-in;
+    }
+    75% {
+      transform: translateX(-$translateX) translateY(0px);
+      animation-timing-function: ease-out;
+    }
+    87.5% {
+      transform: translateX(calc($translateX/-2)) translateY($translateY);
+    }
+    100% {
+      transform: translateX(0px) translateY(0px);
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import "variables";
+
+//===================================================================================//
+//skills
+.work {
+    position: relative;
+    .skills {
+      position: absolute;
+      left: 0;
+      top: 0;
+            width: 100vw;
+  background-color: $black;
+      color: $light;
+      overflow-x: hidden;
+
+       .wrapper {
+        display: flex;
+        align-items: center;
+        overflow-x: hidden;
+        // animation: carousel 60s linear infinite;
+        @keyframes carousel {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(calc(-50px * 30));
+          }
+        }
+        .textContainer {
+          width: 150px; 
+        }
+        p {
+         text-wrap: nowrap;
+        }
+      }
+    }
+  }
+  

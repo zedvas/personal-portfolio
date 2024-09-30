@@ -2,6 +2,7 @@ import { HeroAnim } from "../comps/HeroAnim";
 import { HeroText } from "../comps/HeroText";
 import { HeroVideo } from "../comps/HeroVideo";
 import { PageDown } from "../comps/PageDown";
+import "../styles/home.scss"
 
 export const Home = () => {
   return (

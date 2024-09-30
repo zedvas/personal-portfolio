@@ -1,0 +1,37 @@
+@import "variables";
+
+//===================================================================================//
+//about section
+.about {
+    .page {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    video {
+      align-self: center;
+    }
+    .desc {
+      width: $textWidth;
+      max-width: 400px;
+      font-size: 1.1rem;
+      margin-top: 1em;
+    }
+    //===================================================================================//
+//text change anim
+
+.textChangeAnim {
+    width: calc(100% - $navHeight);
+    font-size: 2.2rem;
+    letter-spacing: -0.1rem;
+    color: $black;
+    font-weight: 800;
+  
+    span {
+      color: $accent;
+      font-weight: 900;
+    }
+  }
+  }
+
+  

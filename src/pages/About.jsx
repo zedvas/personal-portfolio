@@ -2,6 +2,7 @@ import { HeroVideo } from "../comps/HeroVideo";
 import { JuggleContainer } from "../comps/JuggleContainer";
 import { Skills } from "../comps/Skills";
 import { TextChangeAnim } from "../comps/TextChangeAnim";
+import "../styles/about.scss"
 
 export const About = () => {
   return (

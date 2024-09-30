@@ -1,17 +1,24 @@
 import { Form } from "../comps/Form";
 import { HeroVideo } from "../comps/HeroVideo";
+import { JuggleContainer } from "../comps/JuggleContainer";
+import { Socials } from "../comps/Socials";
 
 export const Contact = () => {
-        return (
-          <div className="contact section" id="contact">
-            <div className="page">
-              <div className="left"></div><div className="right"></div>
-              <div className="overlay"> <h2>How can I help?</h2>
-                <Form/>
-                {/* <HeroVideo/> */}
-             </div>
-             
-            </div>
-          </div>
-        );
-      };
+  return (
+    <div className="contact section" id="contact">
+      <div className="page">
+          {/* <h2 title="How can I help?">
+            How can I help?
+          </h2> */}
+
+
+        <div className="juggleWrapper">
+          <JuggleContainer />
+        </div>
+        <Form />       <Socials/>
+
+        {/* <HeroVideo/> */}
+      </div>
+    </div>
+  );
+};

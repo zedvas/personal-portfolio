@@ -5,6 +5,7 @@ $dark: #252422;
 $accent: #eb5e28;
 $black: #000000;
 $navHeight: 45px;
+$textWidth: calc(100vw - $navHeight - 1em);
 $navLinkFontSize: 2rem;
 $componentSize: 300px;
 $maskSize: 170px;
@@ -34,10 +35,10 @@ $animationProps: $speed linear infinite alternate;
   background-color: $darklight;
 }
 .about {
-  background-color: $light;
+  background-color: $lightdark;
 }
 .contact {
-  background-color: $dark;
+  background-color: $lightdark;
 }
 
 //===================================================================================//
@@ -275,7 +276,7 @@ nav {
     align-self: center;
   }
   .desc {
-    width: calc(100vw - $navHeight - 1em);
+    width: $textWidth;
     max-width: 400px;
     font-size: 1.1rem;
     margin-top: 1em;
@@ -287,7 +288,7 @@ nav {
 
 .textChangeAnim {
   width: calc(100% - $navHeight);
-  font-size: 3rem;
+  font-size: 2.2rem;
   letter-spacing: -0.1rem;
   color: $black;
   font-weight: 800;
@@ -316,6 +317,11 @@ nav {
     margin-top: calc($maskSize / -2);
   }
 }
+@media screen and (min-width: 430px) {
+
+.textChangeAnim {
+  font-size:3rem;
+}}
 
 //===================================================================================//
 //juggle anim
@@ -328,6 +334,9 @@ $time: 4s;
 $scale: 1.1;
 
 .juggleContainer {
+  margin-top: -200px;
+  margin-bottom: -200px;
+
   transform: scale(0.5);
   // opacity: 0.5;
   display: flex;
@@ -357,7 +366,8 @@ $scale: 1.1;
       animation: juggle $time linear infinite;
 
       svg {
-        margin: 1em;
+        padding: 0.2em;
+        border-radius: 50%;
       }
     }
 
@@ -410,57 +420,108 @@ $scale: 1.1;
 //===================================================================================//
 //contact
 .contact {
-  color:white;
+  min-height: unset;
+  background-color: #000;
+  color: $light;
+  font-size: 1.5rem;
   .page {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  // .left {
-  //   height: 100%;
-  //   width: 30%;
-  //   background-color: $accent;
-  // }
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    // border: 1px solid blue;
-    height: 100%;
-    width: 100%;
 
-    h2 {
-      color:white;
-      font-size:5rem;
-      // font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  h2 {
+    font-size: 2rem;
+    align-self: flex-start;
+    // color: $lightdark;
+    // font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
+
+  .juggleWrapper,
+  form {
+    align-self: center;
+
+    background-color: $black;
+    padding: 1em;
+    max-width: 420px;
+    margin-left: 0.5em;
+    width: 80%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $lightdark;
+    label {
+      margin-bottom: 0.5em;
+      align-self: flex-start;
     }
-    form {
+    input {
+      margin-bottom: 1em;
+      border: none;
+      width: 100%;
+      font-size: 1.5rem;
+      padding: 0.5em;
+      background-color: $darklight;
+      // border-bottom: 2px solid $light;
+      // border-top: 2px solid $light;
+      color: $light;
+      outline: none;
+    }
+    button {
+      width: 100%;
+      font-size: 1.8rem;
+      padding: 0.5em 1em;
+      background-color: $accent;
+      color: $lightdark;
+      border: 4px solid $accent;
+      font-weight: 600;
+    }
+    input,
+    button {
+      border-radius: 6px;
+    }
+  }
+  .socials {
+    margin-bottom: 2em;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    svg {
+      font-size: 3rem;
+    }
+  }
+}
+//===================================================================================//
+//skills
+.work {
+  position: relative;
+  .skills {
+    position: absolute;
+    left: 0;
+    top: 0;
+          width: 100vw;
+background-color: $black;
+    color: $light;
+     .wrapper {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-left:0.5em;
-      input {
-        background-color: transparent;
-        outline: none;
-        border: none;
-        border: 1px solid white;
-        width: 70%;
-        max-width: 500px;
-        font-size: 1.5rem;
-        // margin-bottom: 2em;
-        padding: 0.7em;
-        color:white;
-        & ::placeholder {
-          color:red;
-          opacity: 1;
+      align-items: center;
+      overflow-x: hidden;
+      // animation: carousel 60s linear infinite;
+      @keyframes carousel {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(calc(-50px * 30));
         }
       }
-      button {
-        background-color: white;
-        font-size: 2rem;
-        outline: none;
-        border:none;
-        padding: 0.5em 1em 0.6em 1em;
-        font-weight: 900;
-        margin-top: 0.5em
+      .textContainer {
+        width: 150px; 
+      }
+      p {
+       text-wrap: nowrap;
       }
     }
   }

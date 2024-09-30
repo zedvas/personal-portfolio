@@ -11,15 +11,9 @@ export const About = () => {
           <TextChangeAnim />
 
           <p className="desc">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea quae
-            cupiditate, distinctio libero aut suscipit! Modi sed nam nobis,
-            minus quod eum nihil sequi amet pariatur voluptatibus. Maxime,
-            aliquid autem exercitationem magnam dolor dignissimos, tenetur illo
-            velit eligendi suscipit quo ipsa. Ea odit rerum labore numquam
-            corporis distinctio saepe accusantium.
+          I’m Zahra, a software developer with a passion for problem-solving, a knack for producing innovative solutions, and a never-ending curiosity to keep expanding my knowledge. When I’m not busy crafting elegant code, you’ll find me hunched over a computer exploring the latest tech trends or tinkering with new tools. I’d love to connect with others who share the same enthusiasm for innovation so do say hello
           </p>
         </div>
-        <Skills/>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import { NavLink } from "./NavLink";
 
 export const Nav = () => {
-  const navLinks = ["home", "work", "about", "contact"];
+  const navLinks = ["home", "about", "work", "contact"];
 
   return (
     <nav className="p-header__nav p-nav">

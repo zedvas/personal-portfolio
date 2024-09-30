@@ -13,7 +13,7 @@ a {
 }
 
 :root {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Fira Mono", monospace;
   font-optical-sizing: auto;
   font-synthesis: none;
   font-size: 62.5%;

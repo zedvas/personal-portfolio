@@ -3,69 +3,70 @@ import { JuggleContainer } from "./JuggleContainer";
 export const Skills = () => {
   return (
     <div className="skills">
-      <div className="wrapper">
-
-        <div className="textContainer"><p>Tailwind</p></div>
-        <div className="textContainer"><p>Express.js</p></div>
-        <div className="textContainer"><p>Socket.io</p></div>
-        <div className="textContainer"><p>OAuth</p></div>
-        <div className="textContainer"><p>GraphQL</p></div>
-        <div className="textContainer"><p>Vitest</p></div>
-        <div className="textContainer"><p>React</p></div>
-        <div className="textContainer"><p>Redis</p></div>
-        <div className="textContainer"><p>AJAX & REST APIs</p></div>
-        <div className="textContainer"><p>Greensock</p></div>
-        <div className="textContainer"><p>Next.js</p></div>
-        <div className="textContainer"><p>MongoDB</p></div>
-        <div className="textContainer"><p>Material UI</p></div>
-        <div className="textContainer"><p>Firebase</p></div>
-        <div className="textContainer"><p>TypeScript</p></div>
-        <div className="textContainer"><p>SASS</p></div>
-        <div className="textContainer"><p>CSS Grid</p></div>
-        <div className="textContainer"><p>XAMPP</p></div>
-        <div className="textContainer"><p>Node.js</p></div>
-        <div className="textContainer"><p>Redux</p></div>
-        <div className="textContainer"><p>HTML5</p></div>
-        <div className="textContainer"><p>CSS 3</p></div>
-        <div className="textContainer"><p>MySQL</p></div>
-        <div className="textContainer"><p>Flexbox</p></div>
-        <div className="textContainer"><p>Cypress</p></div>
-        <div className="textContainer"><p>JavaScript</p></div>
-        <div className="textContainer"><p>Apache</p></div>
-        <div className="textContainer"><p>d3.js</p></div>
-        <div className="textContainer"><p>Vite</p></div>
-        <div className="textContainer"><p>cPanel</p></div>
-        <div className="textContainer"><p>Tailwind</p></div>
-        <div className="textContainer"><p>Express.js</p></div>
-        <div className="textContainer"><p>Socket.io</p></div>
-        <div className="textContainer"><p>OAuth</p></div>
-        <div className="textContainer"><p>GraphQL</p></div>
-        <div className="textContainer"><p>Vitest</p></div>
-        <div className="textContainer"><p>React</p></div>
-        <div className="textContainer"><p>Redis</p></div>
-        <div className="textContainer"><p>AJAX & REST APIs</p></div>
-        <div className="textContainer"><p>Greensock</p></div>
-        <div className="textContainer"><p>Next.js</p></div>
-        <div className="textContainer"><p>MongoDB</p></div>
-        <div className="textContainer"><p>Material UI</p></div>
-        <div className="textContainer"><p>Firebase</p></div>
-        <div className="textContainer"><p>TypeScript</p></div>
-        <div className="textContainer"><p>SASS</p></div>
-        <div className="textContainer"><p>CSS Grid</p></div>
-        <div className="textContainer"><p>XAMPP</p></div>
-        <div className="textContainer"><p>Node.js</p></div>
-        <div className="textContainer"><p>Redux</p></div>
-        <div className="textContainer"><p>HTML5</p></div>
-        <div className="textContainer"><p>CSS 3</p></div>
-        <div className="textContainer"><p>MySQL</p></div>
-        <div className="textContainer"><p>Flexbox</p></div>
-        <div className="textContainer"><p>Cypress</p></div>
-        <div className="textContainer"><p>JavaScript</p></div>
-        <div className="textContainer"><p>Apache</p></div>
-        <div className="textContainer"><p>d3.js</p></div>
-        <div className="textContainer"><p>Vite</p></div>
-        <div className="textContainer"><p>cPanel</p></div>
-      </div>
+      <ul>
+        <li><span>Tailwind</span></li>
+        <li><span>Express.js</span></li>
+        <li><span>Socket.io</span></li>
+        <li><span>OAuth</span></li>
+        <li><span>GraphQL</span></li>
+        <li><span>Vitest</span></li>
+        <li><span>React</span></li>
+        <li><span>Redis</span></li>
+        <li><span>REST APIs</span></li>
+        <li><span>Greensock</span></li>
+        <li><span>Next.js</span></li>
+        <li><span>MongoDB</span></li>
+        <li><span>Material UI</span></li>
+        <li><span>Firebase</span></li>
+        <li><span>TypeScript</span></li>
+        <li><span>SASS</span></li>
+        <li><span>CSS Grid</span></li>
+        <li><span>XAMPP</span></li>
+        <li><span>Node.js</span></li>
+        <li><span>Redux</span></li>
+        <li><span>HTML5</span></li>
+        <li><span>CSS3</span></li>
+        <li><span>MySQL</span></li>
+        <li><span>Flexbox</span></li>
+        <li><span>Cypress</span></li>
+        <li><span>JavaScript</span></li>
+        <li><span>Apache</span></li>
+        <li><span>d3.js</span></li>
+        <li><span>Vite</span></li>
+        <li><span>cPanel</span></li>
+      </ul>
+      <ul>
+        <li><span>Tailwind</span></li>
+        <li><span>Express.js</span></li>
+        <li><span>Socket.io</span></li>
+        <li><span>OAuth</span></li>
+        <li><span>GraphQL</span></li>
+        <li><span>Vitest</span></li>
+        <li><span>React</span></li>
+        <li><span>Redis</span></li>
+        <li><span>REST APIs</span></li>
+        <li><span>Greensock</span></li>
+        <li><span>Next.js</span></li>
+        <li><span>MongoDB</span></li>
+        <li><span>Material UI</span></li>
+        <li><span>Firebase</span></li>
+        <li><span>TypeScript</span></li>
+        <li><span>SASS</span></li>
+        <li><span>CSS Grid</span></li>
+        <li><span>XAMPP</span></li>
+        <li><span>Node.js</span></li>
+        <li><span>Redux</span></li>
+        <li><span>HTML5</span></li>
+        <li><span>CSS3</span></li>
+        <li><span>MySQL</span></li>
+        <li><span>Flexbox</span></li>
+        <li><span>Cypress</span></li>
+        <li><span>JavaScript</span></li>
+        <li><span>Apache</span></li>
+        <li><span>d3.js</span></li>
+        <li><span>Vite</span></li>
+        <li><span>cPanel</span></li>
+      </ul>
     </div>
-  );
+      );
 };

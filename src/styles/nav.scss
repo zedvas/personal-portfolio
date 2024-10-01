@@ -17,7 +17,7 @@ nav {
     justify-content: center;
     align-items: center;
     mix-blend-mode: difference;
-      color: hsl(0, 0%, 100%);
+      color: $light;
 
   
     ul {
@@ -43,7 +43,7 @@ nav {
       left: 0;
     }
     a::before {
-      background-color: $accent;
+      background-color: $light;
       height: 2px;
       bottom: 0;
       transform-origin: 100% 50%;
@@ -57,7 +57,7 @@ nav {
       transform-origin: 100% 50%;
       transform: translate3d(200%, 0, 0);
       transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
-      color: $accent;
+      // color: $white;
     }
   
     a:hover::before {

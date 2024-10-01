@@ -4,35 +4,73 @@
 //skills
 .work {
     position: relative;
-    .skills {
-      position: absolute;
-      left: 0;
-      top: 0;
-            width: 100vw;
-  background-color: $black;
-      color: $light;
-      overflow-x: hidden;
+  //   .skills {
+  //     position: absolute;
+  //     left: 0;
+  //     top: 0;
+  //           width: 100vw;
+  // background-color: $black;
+  //     color: $light;
+  //     overflow-x: hidden;
 
-       .wrapper {
-        display: flex;
-        align-items: center;
-        overflow-x: hidden;
-        // animation: carousel 60s linear infinite;
-        @keyframes carousel {
-          from {
-            transform: translateX(0);
-          }
-          to {
-            transform: translateX(calc(-50px * 30));
-          }
-        }
-        .textContainer {
-          width: 150px; 
-        }
-        p {
-         text-wrap: nowrap;
-        }
-      }
-    }
+  //      .wrapper {
+  //       display: flex;
+  //       align-items: center;
+  //       overflow-x: hidden;
+  //       // animation: carousel 60s linear infinite;
+  //       @keyframes carousel {
+  //         from {
+  //           transform: translateX(0);
+  //         }
+  //         to {
+  //           transform: translateX(calc(-50px * 30));
+  //         }
+  //       }
+  //       .textContainer {
+  //         width: 150px; 
+  //       }
+  //       p {
+  //        text-wrap: nowrap;
+  //       }
+  //     }
+  //   }
   }
   
+  .skills {
+    width: 100vw;
+    position: absolute;
+    left:0;
+    font-size: 1rem;
+    background-color: black;
+    color:white;
+    user-select: none;
+      overflow: hidden;
+    display: flex;
+      width: 100%;
+}
+  
+  .skills ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: scroll 20s linear infinite;  
+
+  }
+  li {
+    margin: 1em;
+    text-wrap: nowrap;
+  }
+  
+  .skills:hover ul {
+    animation-play-state: paused;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-100%, 0);
+    }
+  }

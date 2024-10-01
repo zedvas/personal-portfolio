@@ -77,3 +77,8 @@ nav {
       transform: translate3d(-200%, 0, 0);
     }
   }
+  @media screen and (min-width: 850px) {
+    nav {
+      left: calc(850px - $navHeight + (100vw - 850px) / 2);
+    }
+  }

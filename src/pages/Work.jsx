@@ -8,7 +8,7 @@ export const Work = () => {
     return ( <div className="work section" id="work">
         <div className="page">
           
-          <Skills/>
+          {/* <Skills/> */}
         </div>
     </div>);
 }

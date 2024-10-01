@@ -9,7 +9,7 @@ export const Modal = ({ reactModalIsOpen, closeReactModal, modalText }) => {
       margin: "0 auto",
       padding: 0,
       position: "fixed",
-      zIndex: 9,
+      zIndex: 10,
       top: 0,
       left: 0,
     },
@@ -24,11 +24,11 @@ export const Modal = ({ reactModalIsOpen, closeReactModal, modalText }) => {
       borderRadius: "20px",
       maxHeight: "400px",
       width: "300px",
-      margin: "auto",
+      margin: "0 auto",
       textAlign: "center",
       fontWeight: 500,
       fontSize: "1.1rem",
-      overflow: "hidden"
+      overflow: "hidden",
     },
   };
   return (
@@ -51,7 +51,6 @@ export const Modal = ({ reactModalIsOpen, closeReactModal, modalText }) => {
         >
           <Close onClick={closeReactModal} />
         </button>
-        {/* <p style={{maxWidth: "250px"}}>{modalText}</p> */}
         <>{modalText}</>
       </ReactModal>
     </>

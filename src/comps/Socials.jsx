@@ -6,13 +6,13 @@ export const Socials = () => {
   return (
     <div className="socials">
       <a target="_blank" href="https://www.linkedin.com/in/zahravasanji/">
-        <LinkedInIcon />
+        <LinkedInIcon sx={{ "&:hover": { color: "#403d39" } }}/>
       </a>
       <a target="_blank" href="https://github.com/zedvas">
-        <GitHubIcon />
+        <GitHubIcon sx={{ "&:hover": { color: "#403d39" } }}/>
       </a>
-      <a target="_blank" href="https://github.com/zedvas">
-        <Mail/>
+      <a target="_blank" href="mailto:zahravasanji4@hotmail.com">
+        <Mail sx={{ "&:hover": { color: "#403d39" } }}/>
       </a>
     </div>
   );

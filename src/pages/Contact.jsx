@@ -5,19 +5,17 @@ import { Socials } from "../comps/Socials";
 import "../styles/contact.scss"
 
 
-export const Contact = () => {
+export const Contact = ({ openReactModal, changeModalMessage }) => {
   return (
     <div className="contact section" id="contact">
       <div className="page">
-          {/* <h2 title="How can I help?">
-            How can I help?
-          </h2> */}
+         
 
 
         <div className="juggleWrapper">
           <JuggleContainer />
         </div>
-        <Form />       <Socials/>
+        <Form openReactModal={ openReactModal} changeModalMessage={changeModalMessage }/>       <Socials/>
 
         {/* <HeroVideo/> */}
       </div>

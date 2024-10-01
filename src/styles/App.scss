@@ -27,4 +27,7 @@
   background-color: $lightdark;
 }
 
-
+.disableScroll {
+  height: 100vh;
+  overflow: hidden;
+}

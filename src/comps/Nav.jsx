@@ -1,4 +1,4 @@
-import { NavLink } from "./NavLink";
+import { NavLinkComp } from "./NavLinkComp";
 import '../styles/nav.scss';
 
 export const Nav = () => {
@@ -8,7 +8,7 @@ export const Nav = () => {
     <nav className="p-header__nav p-nav">
       <ul className="p-nav__lists">
         {navLinks.map((navLink, index) => {
-            return <NavLink navLink={navLink} key={index}/>
+            return <NavLinkComp navLink={navLink} key={index}/>
         })}
       </ul>
     </nav>

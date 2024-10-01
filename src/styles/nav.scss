@@ -34,6 +34,8 @@ nav {
       font-size: 1.3rem;
       font-weight: 700;
     }
+
+
   
     a::before,
     a::after {
@@ -46,7 +48,7 @@ nav {
       background-color: $light;
       height: 2px;
       bottom: 0;
-      transform-origin: 100% 50%;
+      transform-origin: 200% 50%;
       transform: scaleX(0);
       transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
     }
@@ -77,8 +79,19 @@ nav {
       transform: translate3d(-200%, 0, 0);
     }
   }
+
+  .active, .active:hover, .active span, .active::before, .active::after {
+    transition: none;
+  }
+  .active::before {
+    display: none;
+  }
+
+  
   @media screen and (min-width: 850px) {
     nav {
       left: calc(850px - $navHeight + (100vw - 850px) / 2);
     }
   }
+
+ 

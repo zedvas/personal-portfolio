@@ -9,6 +9,7 @@ import { Contact } from "./pages/Contact";
 
 import { Modal } from "./comps/Modal";
 import { useState } from "react";
+// import { Spinner } from "./comps/Spinner";
 function App() {
   const [reactModalIsOpen, setReactModalIsOpen] = useState(false);
   const [modalText, setModalText] = useState("")
@@ -33,6 +34,7 @@ function App() {
         closeReactModal={closeReactModal}
         modalText={modalText}
       />
+      {/* <Spinner/> */}
       <Nav />
       <Home />
       <About />

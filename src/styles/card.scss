@@ -1,0 +1,43 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  margin: 5em 3em;
+  font-size: 1.2rem;
+  div {
+    width: 100%;
+  }
+  .techContainer {
+    font-weight: 500;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 90%;
+    span {
+        margin-right: 1.5em
+    }
+  }
+  .buttonContainer {
+        display: flex;justify-content: flex-end;align-items: flex-end;
+        
+.fullStackButtons {
+        display: flex;
+align-items: flex-end;justify-content: flex-end;
+    }
+    button {
+        background-color: transparent;border:none;font-family: "Fira Mono";
+        font-weight: 600;
+        margin-left:2em;
+        a {
+            text-wrap: nowrap;
+        }
+    }
+  }
+  .fullStackButtonContainer {
+    flex-direction: column;
+  }
+  img {
+    width: 100%;
+  }
+}

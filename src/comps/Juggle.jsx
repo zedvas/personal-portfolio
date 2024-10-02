@@ -215,7 +215,7 @@ export const Juggle = () => {
   }, [count]);
 
   return (
-    <div className="preload-juggle juggleAnim">
+    <div className="preload-juggle juggleAnim" >
       <div className="ball">{tools[count]}</div>
       <div className="ball">{tools[count + 1]}</div>
       <div className="ball">{tools[count + 2]}</div>

@@ -7,9 +7,8 @@ $boxWidth: 100px;
 $ballWidth: 50px;
 $translateX: 70px;
 $translateY: 80px;
-$time: 4s;
+$time: 5s;
 $scale: 1.1;
-$time: 4s;
 
 .juggleContainer {
   margin-top: -200px;
@@ -20,9 +19,6 @@ $time: 4s;
   align-items: center;
   flex-direction: column;
   padding-top: 5em;
-  &:hover .preload-juggle div {
-    animation: juggle 1s linear infinite;
-  }
   .hands {
     width: 100%;
   }
@@ -58,40 +54,44 @@ $time: 4s;
       animation-delay: calc($time/-1.5);
     }
   }
+}
 
-  @keyframes juggle {
-    0% {
-      transform: translateX(0px) translateY(0px);
-    }
-    12.5% {
-      transform: translateX(calc($translateX/2)) translateY(-$translateY)
-        scale($scale);
-      background: $accent;
-    }
-    25% {
-      transform: translateX($translateX) translateY(0px);
-      animation-timing-function: ease-out;
-    }
-    37.5% {
-      transform: translateX(calc($translateX/2)) translateY($translateY);
-    }
-    50% {
-      transform: translateX(0px) translateY(0px);
-    }
-    62.5% {
-      transform: translateX(calc($translateX/-2)) translateY(-$translateY)
-        scale($scale);
-      animation-timing-function: ease-in;
-    }
-    75% {
-      transform: translateX(-$translateX) translateY(0px);
-      animation-timing-function: ease-out;
-    }
-    87.5% {
-      transform: translateX(calc($translateX/-2)) translateY($translateY);
-    }
-    100% {
-      transform: translateX(0px) translateY(0px);
-    }
+.fastJuggle .preload-juggle div {
+  animation: juggle 1s ease-in-out infinite;
+}
+
+@keyframes juggle {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  12.5% {
+    transform: translateX(calc($translateX/2)) translateY(-$translateY)
+      scale($scale);
+    background: $accent;
+  }
+  25% {
+    transform: translateX($translateX) translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  37.5% {
+    transform: translateX(calc($translateX/2)) translateY($translateY);
+  }
+  50% {
+    transform: translateX(0px) translateY(0px);
+  }
+  62.5% {
+    transform: translateX(calc($translateX/-2)) translateY(-$translateY)
+      scale($scale);
+    animation-timing-function: ease-in;
+  }
+  75% {
+    transform: translateX(-$translateX) translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  87.5% {
+    transform: translateX(calc($translateX/-2)) translateY($translateY);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px);
   }
 }

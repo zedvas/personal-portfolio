@@ -6,7 +6,11 @@
     .page {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: center; 
+      a {
+        font-weight: 800;
+     
+      }
     }
     video {
       align-self: center;
@@ -14,8 +18,8 @@
     .desc {
       width: $textWidth;
       max-width: 400px;
-      font-size: 1.1rem;
-      margin-top: 1em;
+      font-size: 1.2rem;
+      margin: 2em 0;
     }
     //===================================================================================//
 //text change anim

@@ -2,7 +2,7 @@ import { Card } from "./Card";
 
 export const Projects = () => {
   return (
-    <div>
+    <div className="projects">
       <Card
         fullStack={true}
         imageSrc={"/holidough.png"}

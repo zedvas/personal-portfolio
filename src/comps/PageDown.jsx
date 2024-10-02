@@ -17,7 +17,7 @@ export const PageDown = () => {
     //     strokeWidth={1}
     //   />
     // </svg>
-    <a href="#work">
+    <a href="/page#about">
       <svg className="arrows">
         <path className="a1" d="M0 0 L30 32 L60 0"></path>
         <path className="a2" d="M0 20 L30 52 L60 20"></path>

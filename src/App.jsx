@@ -9,10 +9,13 @@ import { Contact } from "./pages/Contact";
 
 import { Modal } from "./comps/Modal";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import { Pages } from "./pages/Pages";
+import { NotFound } from "./comps/NotFound";
 // import { Spinner } from "./comps/Spinner";
 function App() {
   const [reactModalIsOpen, setReactModalIsOpen] = useState(false);
-  const [modalText, setModalText] = useState("")
+  const [modalText, setModalText] = useState("");
 
   const openReactModal = () => {
     setReactModalIsOpen(true);
@@ -23,23 +26,32 @@ function App() {
   };
 
   const changeModalMessage = (message) => {
-    setModalText(message)
-  }
-
+    setModalText(message);
+  };
 
   return (
-    <div className={reactModalIsOpen? "wrapper disableScroll": "wrapper"}>
-        <Modal
+    <div className={reactModalIsOpen ? "wrapper disableScroll" : "wrapper"}>
+      <Modal
         reactModalIsOpen={reactModalIsOpen}
         closeReactModal={closeReactModal}
         modalText={modalText}
       />
       {/* <Spinner/> */}
       <Nav />
-      <Home />
-      <About />
-      <Work />
-      <Contact openReactModal={openReactModal} changeModalMessage={changeModalMessage}/>
+      <Routes>
+        <Route exact path="/" element={<Home />} />{" "}
+        <Route
+          exact
+          path="/page"
+          element={
+            <Pages
+              openReactModal={openReactModal}
+              changeModalMessage={changeModalMessage}
+            />
+          }
+        />{" "}
+        <Route path="/*" element={<NotFound/>}/>
+      </Routes>
     </div>
   );
 }

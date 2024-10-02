@@ -3,95 +3,91 @@
 //NAV
 
 nav {
-    transform-origin: left bottom;
-    transform: rotate(90deg);
-    -webkit-transform-origin: left bottom;
-    -webkit-transform: rotate(90deg);
-    position: fixed;
-    z-index:9;
-    top: -$navHeight;
-    left: calc(100vw - $navHeight);
-    width: 100vh;
-    height: $navHeight;
+  transform-origin: left bottom;
+  transform: rotate(90deg);
+  -webkit-transform-origin: left bottom;
+  -webkit-transform: rotate(90deg);
+  position: fixed;
+  z-index: 10;
+  top: -$navHeight;
+  left: calc(100vw - $navHeight);
+  width: 100vh;
+  height: $navHeight;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  mix-blend-mode: difference;
+  color: $light;
+
+  ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    mix-blend-mode: difference;
-      color: $light;
-
-  
-    ul {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 70%;
-    }
-  
-    a {
-      overflow: hidden;
-      position: relative;
-      display: inline-block;
-      font-size: 1.3rem;
-      font-weight: 700;
-    }
-
-
-  
-    a::before,
-    a::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      left: 0;
-    }
-    a::before {
-      background-color: $light;
-      height: 2px;
-      bottom: 0;
-      transform-origin: 200% 50%;
-      transform: scaleX(0);
-      transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
-    }
-    a::after {
-      content: attr(data-replace);
-      height: 100%;
-      top: 0;
-      transform-origin: 100% 50%;
-      transform: translate3d(200%, 0, 0);
-      transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
-      // color: $white;
-    }
-  
-    a:hover::before {
-      transform-origin: 0% 50%;
-      transform: scaleX(1);
-    }
-    a:hover::after {
-      transform: translate3d(0, 0, 0);
-    }
-  
-    a span {
-      display: inline-block;
-      transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
-    }
-  
-    a:hover span {
-      transform: translate3d(-200%, 0, 0);
-    }
+    width: 70%;
   }
 
-  .active, .active:hover, .active span, .active::before, .active::after {
-    transition: none;
-  }
-  .active::before {
-    display: none;
-  }
-
-  
-  @media screen and (min-width: 850px) {
-    nav {
-      left: calc(850px - $navHeight + (100vw - 850px) / 2);
-    }
+  a {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 700;
   }
 
+  a::before,
+  a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+  a::before {
+    background-color: $light;
+    height: 2px;
+    bottom: 0;
+    transform-origin: 200% 50%;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+
+  }
+  a::after {
+    content: attr(data-replace);
+    height: 100%;
+    top: 0;
+    transform-origin: 100% 50%;
+    transform: translate3d(200%, 0, 0);
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  a:hover::before {
+    transform-origin: 0% 50%;
+    transform: scaleX(1);
+  }
+  a:hover::after {
+    transform: translate3d(0, 0, 0);
+  }
+
+  a span {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  a:hover span {
+    transform: translate3d(-200%, 0, 0);
+  }
+}
+
+.active {
+  pointer-events: none;
+
+  &::before {
+    transform: scaleX(1);
+  }
  
+}
+
+@media screen and (min-width: 850px) {
+  nav {
+    left: calc(850px - $navHeight + (100vw - 850px) / 2);
+  }
+}

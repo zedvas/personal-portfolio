@@ -5,157 +5,221 @@
 
 .home {
   position: relative;
-    .heroAnim {
-      margin-top: 50vh;
-      transform: translateY(-50%);
-  
-      color: $black;
-      width: 242px;
-      h1 {
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        line-height: 0.8em;
-        font-size: inherit;
-        font-size: 30rem;
-      }
-      p {
-        font-size: 2.4rem;
-        float: right;
-      }
+  .heroAnim {
+    // margin-top: 50vh;
+    // transform: translateY(-50%);
+
+    color: $black;
+    width: 242px;
+    h1 {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: inherit;
+      font-size: 30rem;
+      margin-top: 3rem;
     }
-  
-    //===================================================================================//
-    //focus anim
-  
-    @keyframes mask-move {
-      0% {
-        transform: translateX(10px);
-      }
-      100% {
-        transform: translateX($componentSize - $maskSize);
-      }
-    }
-  
-    @keyframes mask-inner-move {
-      0% {
-        transform: translateX(20px);
-      }
-      100% {
-        transform: translateX(-($componentSize - $maskSize));
-      }
-    }
-  
-    .focus {
-      margin-top: 1em;
-      font-size: 3rem;
-      color: #000;
-      letter-spacing: 0.2rem;
-      line-height: 1;
-      position: relative;
-      padding-left: 10px;
-      width: $componentSize;
-      &:before {
-        content: "  im zahra";
-        filter: blur(3px);
-      }
-      &:after {
-        content: "";
-        position: absolute;
-        width: $maskSize;
-        height: calc(100% + #{$borderOffset});
-        top: calc($borderOffset / -2);
-        left: 0;
-        // border-top: 2px solid;
-        border-bottom: 2px solid;
-        animation: mask-move $animationProps;
-      }
-      &--mask {
-        overflow: hidden;
-        position: absolute;
-        width: $maskSize;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: $backgroundColor;
-        animation: mask-move $animationProps;
-        &-inner {
-          animation: mask-inner-move $animationProps;
-        }
-      }
-    }
-  
-    //===================================================================================//
-    //arrow anim
-  
-    .arrows {
-      width: 60px;
-      height: 72px;
-      position: absolute;
-      left: 50%;
-      margin-left: -30px;
-      bottom: 10px;
-    }
-  
-    .arrows path {
-      stroke: $accent;
-      fill: $accent;
-      stroke-width: 1px;
-      animation: arrow 0.5s infinite;
-      -webkit-animation: arrow 2s infinite;
-    }
-  
-    @keyframes arrow {
-      0% {
-        opacity: 0;
-      }
-      40% {
-        opacity: 1;
-      }
-      80% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-  
-    @-webkit-keyframes arrow /*Safari and Chrome*/ {
-      0% {
-        opacity: 0;
-      }
-      40% {
-        opacity: 1;
-      }
-      80% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-  
-    .arrows path.a1 {
-      animation-delay: -1s;
-      -webkit-animation-delay: -1s; /* Safari 和 Chrome */
-    }
-  
-    .arrows path.a2 {
-      animation-delay: -0.5s;
-      -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
-    }
-  
-    .arrows path.a3 {
-      animation-delay: 0s;
-      -webkit-animation-delay: 0s; /* Safari 和 Chrome */
+    p {
+      font-size: 2.4rem;
+      float: right;
     }
   }
-  
-  @media screen and (min-width: 600px) {
-    .home{
+
+  //===================================================================================//
+  //focus anim
+
+  @keyframes mask-move {
+    0% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX($componentSize - $maskSize);
+    }
+  }
+
+  @keyframes mask-inner-move {
+    0% {
+      transform: translateX(20px);
+    }
+    100% {
+      transform: translateX(-($componentSize - $maskSize));
+    }
+  }
+
+  .focus {
+    margin-top: 1em;
+    font-size: 3rem;
+    color: #000;
+    letter-spacing: 0.2rem;
+    line-height: 1;
+    position: relative;
+    padding-left: 10px;
+    width: $componentSize;
+    &:before {
+      content: "  im zahra";
+      filter: blur(3px);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: $maskSize;
+      height: calc(100% + #{$borderOffset});
+      top: calc($borderOffset / -2);
+      left: 0;
+      // border-top: 2px solid;
+      border-bottom: 2px solid;
+      animation: mask-move $animationProps;
+    }
+    &--mask {
+      overflow: hidden;
+      position: absolute;
+      width: $maskSize;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: $backgroundColor;
+      animation: mask-move $animationProps;
+      &-inner {
+        animation: mask-inner-move $animationProps;
+      }
+    }
+  }
+
+  //===================================================================================//
+  //arrow anim
+
+  .arrows {
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .arrows svg {
+    font-size: 5rem;
+    margin-top: -3rem;
+    stroke-width: 1px;
+    // animation: arrow 2s infinite;
+    // -webkit-animation: arrow 2s infinite;
+  }
+
+  .a1 {
+    animation: a1 2s infinite;
+    -webkit-animation: a1 2s infinite;
+  }
+  .a2 {
+    animation: a2 2s infinite;
+    -webkit-animation: a1 2s infinite;
+  }
+  .a3 {
+    animation: a3 1.5s infinite;
+    -webkit-animation: a1 2s infinite;
+  }
+
+  @keyframes arrow {
+    0% {
+      opacity: 0;
+      fill: $black;
+    }
+    40% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes a1 {
+    0% {
+      opacity: 0;
+      fill: $black;
+    }
+    40% {
+      opacity: 1;
+      fill: $accent;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes a2 {
+    0% {
+      opacity: 0;
+      fill: $black;
+    }
+    40% {
+      opacity: 1;
+      fill: $accent;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes a3 {
+    0% {
+      opacity: 0;
+      fill: $black;
+    }
+    40% {
+      opacity: 1;
+      fill: $accent;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @-webkit-keyframes arrow /*Safari and Chrome*/ {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  // .arrows path.a1 {
+  //   animation-delay: -2s;
+  //   -webkit-animation-delay: -2s; /* Safari 和 Chrome */
+  // }
+
+  // .arrows path.a2 {
+  //   animation-delay: -1s;
+  //   -webkit-animation-delay: -1s; /* Safari 和 Chrome */
+  // }
+
+  // .arrows path.a3 {
+  //   animation-delay: 0s;
+  //   -webkit-animation-delay: 0s; /* Safari 和 Chrome */
+  // }
+}
+
+@media screen and (min-width: 600px) {
+  .home {
     .focus {
       margin-left: 8em;
       margin-top: -50%;
     }
     h1 {
       margin-top: calc($maskSize / -2);
-    }}
+    }
   }
+}

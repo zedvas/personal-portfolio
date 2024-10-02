@@ -3,77 +3,82 @@
 //===================================================================================//
 //contact
 .contact {
-    min-height: unset;
-    background-color: #000;
-    color: $light;
-    font-size: 1.5rem;
-    .page {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    h2 {
-      font-size: 2rem;
+  background-color: #000;
+  color: $light;
+  font-size: 1.5rem;
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  h2 {
+    font-size: 2rem;
+    align-self: flex-start;
+    // color: $lightdark;
+    // font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
+
+  .juggleWrapper,
+  form {
+    align-self: center;
+
+    background-color: $black;
+    padding: 1em;
+    max-width: 420px;
+    margin-left: 0.5em;
+    width: 80%;
+  }
+  .formContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $lightdark;
+    label {
+      margin-bottom: 0.5em;
       align-self: flex-start;
-      // color: $lightdark;
-      // font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     }
-  
-    .juggleWrapper,
-    form {
-      align-self: center;
-  
-      background-color: $black;
-      padding: 1em;
-      max-width: 420px;
-      margin-left: 0.5em;
-      width: 80%;
+    input {
+      margin-bottom: 1em;
+      border: none;
+      width: 100%;
+      font-size: 1.5rem;
+      padding: 0.5em;
+      background-color: $darklight;
+      // border-bottom: 2px solid $light;
+      // border-top: 2px solid $light;
+      color: $light;
+      outline: none;
     }
-  
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: $lightdark;
-      label {
-        margin-bottom: 0.5em;
-        align-self: flex-start;
-      }
-      input {
-        margin-bottom: 1em;
-        border: none;
-        width: 100%;
-        font-size: 1.5rem;
-        padding: 0.5em;
-        background-color: $darklight;
-        // border-bottom: 2px solid $light;
-        // border-top: 2px solid $light;
-        color: $light;
-        outline: none;
-      }
-      button {
-        width: 100%;
-        font-size: 1.8rem;
-        padding: 0.5em 1em;
-        background-color: $accent;
-        color: $light;
-        border: 4px solid $accent;
-        font-weight: 600;
-      }
-      input,
-      button {
-        border-radius: 6px;
-      }
+    button {
+      width: 100%;
+      font-size: 1.8rem;
+      padding: 0.5em 1em;
+      background-color: $accent;
+      color: $light;
+      border: 4px solid $accent;
+      font-weight: 600;
     }
-    .socials {
-      margin-bottom: 2em;
-      width: 100px;
-      display: flex;
-      justify-content: space-between;
-      svg {
-        font-size: 3rem;
-      }
+    input,
+    button {
+      border-radius: 6px;
     }
   }
-  
+  .socials {
+    margin-bottom: 2em;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    svg {
+      font-size: 3rem;
+    }
+  }
+}

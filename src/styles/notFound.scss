@@ -3,13 +3,17 @@
 .notFound {
   .page {
     color: $light;
-    display: flex;justify-content: center;align-items: center;flex-direction:column;
+    display: flex;justify-content: center;flex-direction:column;
     h1, h2 {
       width: 80%;
      
     }
     h2 {
         font-weight: 400;
+    }
+    video {
+      width: 300px;
+      margin-top: 2em;
     }
 
   }

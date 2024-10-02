@@ -8,9 +8,9 @@ export const Modal = ({ reactModalIsOpen, closeReactModal, modalText }) => {
     overlay: {
       margin: "0 auto",
       padding: 0,
-      position: "fixed",
+      position: "absolute",
       zIndex: 10,
-      top: 0,
+      bottom: 0,
       left: 0,
     },
     content: {

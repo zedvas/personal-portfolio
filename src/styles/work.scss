@@ -3,7 +3,7 @@
 //===================================================================================//
 //skills
 .work {
-    position: relative;
+  position: relative;
   //   .skills {
   //     position: absolute;
   //     left: 0;
@@ -27,45 +27,46 @@
   //         }
   //       }
   //       .textContainer {
-  //         width: 150px; 
+  //         width: 150px;
   //       }
   //       p {
   //        text-wrap: nowrap;
   //       }
   //     }
   //   }
-  }
-  
+
   .skills {
     width: 100vw;
     position: absolute;
-    left:0;
+    left: 0;
     font-size: 1rem;
     background-color: black;
-    color:white;
+    color: white;
     user-select: none;
-      overflow: hidden;
+    overflow: hidden;
     display: flex;
-      width: 100%;
-}
-  
+    width: 100%;
+  }
+
   .skills ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    animation: scroll 20s linear infinite;  
-
+    animation: scroll 20s linear infinite;
   }
   li {
     margin: 1em;
     text-wrap: nowrap;
   }
-  
+  a {
+    color: #000;
+  }
+
   .skills:hover ul {
     animation-play-state: paused;
   }
-  
+
   @keyframes scroll {
     0% {
       transform: translate(0, 0);
@@ -74,3 +75,4 @@
       transform: translate(-100%, 0);
     }
   }
+}

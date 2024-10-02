@@ -99,7 +99,7 @@ export const Form = ({ openReactModal, changeModalMessage }) => {
         onChange={changeHandler}
       />
       <label htmlFor="#message">message</label>
-      <input
+      <textarea
         type="text"
         name="message"
         id="message"

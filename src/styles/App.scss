@@ -26,8 +26,14 @@
 .contact {
   background-color: $lightdark;
 }
-
+.notFound {
+  background-color: $darklight;
+}
 .disableScroll {
   height: 100vh;
   overflow: hidden;
 }
+@media screen and (min-width: 600px) {
+  section:nth-last-child(1) {
+display: none;
+}}

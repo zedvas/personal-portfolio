@@ -4,35 +4,34 @@
 //about section
 .about {
   color: $light;
-    .page {
-      display: flex;
-      flex-direction: column;
-      justify-content: center; 
-      a {
-        font-weight: 800;
-     
-      }
+  .page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    a {
+      font-weight: 800;
     }
-    video {
-      align-self: center;
-    }
-    .desc {
-      width: $textWidth;
-      max-width: 400px;
-      font-size: 1.2rem;
-      font-weight: 100;
-      margin: 2em 0;
-    }
-    //===================================================================================//
-//text change anim
+  }
+  video {
+    align-self: center;
+  }
+  .desc {
+    width: $textWidth;
+    max-width: 400px;
+    font-size: 1.2rem;
+    font-weight: 100;
+    margin: 2em 0;
+  }
+  //===================================================================================//
+  //text change anim
 
-.textChangeAnim {
+  .textChangeAnim {
     width: calc(100% - $navHeight);
     font-size: 2.2rem;
     letter-spacing: -0.1rem;
     // color: $black;
     font-weight: 800;
-  
+
     span {
       color: $accent;
       font-weight: 900;
@@ -42,20 +41,21 @@
   button {
     background-color: transparent;
     font-family: inherit;
-    border:none;
+    border: none;
     cursor: pointer;
     a {
-      color: $accent;    text-decoration: underline;
-
+      color: $accent;
+      text-decoration: underline;
+      svg {
+      margin-right: 3px;
+      margin-bottom: -3px
     }
-
   }
-  }
+}
 
-  
-  
 @media screen and (min-width: 430px) {
-
   .textChangeAnim {
-    font-size:3rem;
-  }}
+    font-size: 3rem;
+  }
+}
+}

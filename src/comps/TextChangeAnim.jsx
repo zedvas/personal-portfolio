@@ -24,6 +24,6 @@ export const TextChangeAnim = () => {
 
   //   displayText();
   return (
-    <p className="textChangeAnim">I like <span>{strings[count]}</span></p>
+    <p className="textChangeAnim">i like <span>{strings[count]}</span></p>
   );
 };

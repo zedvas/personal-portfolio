@@ -62,11 +62,10 @@ export const Projects = () => {
           "A vanilla JavaScript web application utilizing the Fetch and Geolocation APIs to get and display weather data from the OpenWeatherMap API. HTML nodes have been created and injected by dynamic DOM manipulation."
         }
         tools={[
-          "Vanilla JavaScript",
+          "JavaScript",
           "DOM Manipulation",
           "Geolocation API",
-          "Fetch API",
-          "SASS",
+          "Fetch API"
         ]}
         githubLink="https://github.com/zedvas/weatherApp"
         demoLink="https://weather-zv.netlify.app/"

@@ -57,26 +57,26 @@ export const Card = ({
           <div className="fullStackButtons">
             <button>
               <a href={githubLink} target="_blank">
-                Code - front
+                code - front
               </a>
             </button>
             <button>
               <a href={githubLinkBackend} target="_blank">
-                Code - back
+                code - back
               </a>
             </button>
           </div>
         ) : (
           <button>
             <a href={githubLink} target="_blank">
-              Code
+              code
             </a>
           </button>
         )}
         {!portfolio && (
-          <button className="demo">
-            <a href={demoLink} target="_blank">
-              Live demo
+          <button >
+            <a href={demoLink} className="demo" target="_blank">
+              live demo
             </a>
           </button>
         )}

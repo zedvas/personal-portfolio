@@ -30,9 +30,9 @@ export const Card = ({
         onMouseEnter={showImage}
         onMouseLeave={hideImage}
         onMouseDown={showImage}
-        onClick={showImage}
+        onClick={Image}
       >
-        <img src={imageSrc} onClick={hideImage}/>
+        <img src={imageSrc} onClick={hideImage} />
         <div
           className={
             imageVisible ? "textContainer hideTextContainer" : "textContainer "
@@ -44,7 +44,7 @@ export const Card = ({
               <span key={tool}>{"<" + tool + ">"}</span>
             ))}
           </div>
-        </div>{" "}
+        </div>
       </div>
       <div
         className={

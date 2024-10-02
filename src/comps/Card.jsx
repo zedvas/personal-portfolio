@@ -12,27 +12,31 @@ export const Card = ({
   demoLink,
   portfolio,
 }) => {
-  const [imageVisible, setImageVisible] = useState(false)
-const showImage = ()=> {
-  setImageVisible(true)
-}
-const hideImage = ()=> {
-  setImageVisible(false)
-
-}
+  const [imageVisible, setImageVisible] = useState(false);
+  const showImage = () => {
+    setImageVisible(true);
+  };
+  const hideImage = () => {
+    setImageVisible(false);
+  };
 
   return (
     <div className={fullStack ? "card fullstack" : "card"}>
-           <a href={demoLink} target="_blank">
-            <h2>{title}</h2>
-          </a>
-      <div className="container" onMouseEnter={showImage} onMouseLeave={hideImage} onMouseDown={showImage}>
-        
-        <a href={demoLink} target="_blank">
-          <img src={imageSrc}/>
-        </a>
-        <div className={imageVisible ? "textContainer hideTextContainer":"textContainer "}>
-     
+      <a href={demoLink} target="_blank">
+        <h2>{title}</h2>
+      </a>
+      <div
+        className="container"
+        onMouseEnter={showImage}
+        onMouseLeave={hideImage}
+        onMouseDown={showImage}
+      >
+        <img src={imageSrc} />
+        <div
+          className={
+            imageVisible ? "textContainer hideTextContainer" : "textContainer "
+          }
+        >
           <p>{description}</p>
           <div className="techContainer">
             {tools.map((tool) => (

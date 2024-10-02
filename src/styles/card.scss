@@ -1,6 +1,7 @@
 @import "variables";
 
 .card {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -13,13 +14,35 @@
     position: relative;
     width: 75vw;
     max-width: 512px;
-    height:calc(auto - 3px);
-
+    height: calc(auto - 3px);
+    svg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 99;
+      font-size: 2.2rem;
+      margin: 0.5em 0.5em 0 0;
+      background-color: $accent;
+      border-radius: 50%;
+      cursor: pointer;
+      animation: spin 6s infinite;
+      ;
+      
+    }
+    svg.overlayHidden {
+      background-color: $accent;
+      color: $black;
+    }
+    svg.overlayVisible {
+      background-color: $black;
+      color: $accent;
+    }
   }
   h2 {
     font-size: 2.8rem;
   }
-  .textContainer {
+  .overlay {
+    position: relative;
     margin-top: 0 auto;
     pointer-events: none;
     display: flex;
@@ -33,6 +56,7 @@
     width: 100%;
     height: calc(100% - 3px);
     background-color: #f14e0ed6;
+    transition: transform 1.5s ease-in;
     // $light: #fffcf2;
     // $lightdark: #ccc5b9;
     // $darklight: #403d39;
@@ -44,9 +68,10 @@
       margin-bottom: 1em;
     }
   }
-  .hideTextContainer {
-    display: none;
+  div.overlayHidden {
+    transform: translateX(-100%);
   }
+  
   div {
     width: 100%;
   }
@@ -88,7 +113,8 @@
         }
       }
       .demo {
-        background-color: black;padding: 0.3em 0.5em;
+        background-color: black;
+        padding: 0.3em 0.5em;
         color: $accent;
         margin-bottom: -3px;
       }
@@ -101,4 +127,10 @@
     height: 100%;
     width: 100%;
   }
+}
+
+@keyframes spin {
+  0% {transform: rotate(0deg);}
+  40% {transform: rotate(360deg);}
+  100% {transform: rotate(360deg);}
 }

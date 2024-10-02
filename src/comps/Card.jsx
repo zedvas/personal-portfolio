@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/card.scss";
+import { CardInfo } from "./CardInfo";
 
 export const Card = ({
   fullStack,
@@ -12,40 +13,23 @@ export const Card = ({
   demoLink,
   portfolio,
 }) => {
-  const [imageVisible, setImageVisible] = useState(false);
-  const showImage = () => {
-    setImageVisible(true);
-  };
-  const hideImage = () => {
-    setImageVisible(false);
-  };
+  const [overlayHidden, setoverlayHidden] = useState(true);
+  const toggleOverlay = () => {
+    setoverlayHidden(!overlayHidden);}
+
 
   return (
     <div className={fullStack ? "card fullstack" : "card"}>
       <a href={demoLink} target="_blank">
         <h2>{title}</h2>
       </a>
-      <div
-        className="container"
-        onMouseEnter={showImage}
-        onMouseLeave={hideImage}
-        onMouseDown={showImage}
-        onClick={Image}
-      >
-        <img src={imageSrc} onClick={hideImage} />
-        <div
-          className={
-            imageVisible ? "textContainer hideTextContainer" : "textContainer "
-          }
-        >
-          <p>{description}</p>
-          <div className="techContainer">
-            {tools.map((tool) => (
-              <span key={tool}>{"<" + tool + ">"}</span>
-            ))}
-          </div>
-        </div>
-      </div>
+      <CardInfo
+        tools={tools}
+        description={description}
+        imageSrc={imageSrc}
+        overlayHidden={overlayHidden}
+        toggleOverlay={toggleOverlay}
+      />
       <div
         className={
           fullStack
@@ -74,7 +58,7 @@ export const Card = ({
           </button>
         )}
         {!portfolio && (
-          <button >
+          <button>
             <a href={demoLink} className="demo" target="_blank">
               live demo
             </a>

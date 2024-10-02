@@ -8,7 +8,7 @@ export const Projects = () => {
         imageSrc={"/holidough.png"}
         title={"HoliDough"}
         description={
-          "A full-stack holiday budgeting application that allows users to manage, track, and predict expenses, with graphs for visual budget tracking"
+          "A full-stack holiday budgeting application that allows users to track and predict expenses, with graphs for visual budget tracking"
         }
         tools={[
           "React",
@@ -59,11 +59,10 @@ export const Projects = () => {
         imageSrc={"/weather.png"}
         title={"Weather App"}
         description={
-          "A vanilla JavaScript web application utilizing the Fetch and Geolocation APIs to get and display weather data from the OpenWeatherMap API. HTML nodes have been created and injected by dynamic DOM manipulation."
+          "A vanilla JavaScript app utilizing the Fetch, Geolocation and OpenWeatherMap APIs. HTML nodes have been created and injected by dynamic DOM manipulation."
         }
         tools={[
           "JavaScript",
-          "DOM Manipulation",
           "Geolocation API",
           "Fetch API"
         ]}

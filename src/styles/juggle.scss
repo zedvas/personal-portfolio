@@ -9,17 +9,20 @@ $translateX: 70px;
 $translateY: 80px;
 $time: 4s;
 $scale: 1.1;
+$time: 4s;
 
 .juggleContainer {
   margin-top: -200px;
   margin-bottom: -200px;
-
   transform: scale(0.5);
   // opacity: 0.5;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding-top: 5em;
+  &:hover .preload-juggle div {
+    animation: juggle 1s linear infinite;
+  }
   .hands {
     width: 100%;
   }
@@ -28,7 +31,6 @@ $scale: 1.1;
     height: $boxWidth;
     position: absolute;
     margin-right: 50px;
-
     div {
       display: flex;
       justify-content: center;

@@ -46,15 +46,15 @@
 
   .focus {
     margin-top: 1em;
-    font-size: 3rem;
+    font-size: 2.8rem;
     color: #000;
     letter-spacing: 0.2rem;
     line-height: 1;
     position: relative;
-    padding-left: 10px;
+    padding-left: 2.5rem;
     width: $componentSize;
     &:before {
-      content: "  im zahra";
+      content: "  i'm zahra";
       filter: blur(3px);
     }
     &:after {

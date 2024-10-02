@@ -11,7 +11,7 @@ export const Contact = ({ openReactModal, changeModalMessage }) => {
         <div className="juggleWrapper">
           <JuggleContainer />
         </div>
-        <h1>Talk nerdy to me</h1>
+        <h1>talk nerdy to me</h1>
         <div className="formContainer">
           <Form
             openReactModal={openReactModal}

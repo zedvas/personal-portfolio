@@ -1,3 +1,5 @@
+@import "variables";
+
 .card {
   display: flex;
   flex-direction: column;
@@ -15,23 +17,34 @@
     align-items: center;
     width: 90%;
     span {
-        margin-right: 1.5em
+      margin-right: 1.5em;
     }
   }
   .buttonContainer {
-        display: flex;justify-content: flex-end;align-items: flex-end;
-        
-.fullStackButtons {
-        display: flex;
-align-items: flex-end;justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    .fullStackButtons {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
     }
+
     button {
-        background-color: transparent;border:none;font-family: "Fira Mono";
-        font-weight: 600;
-        margin-left:2em;
-        a {
-            text-wrap: nowrap;
-        }
+      // color: $light;
+      padding: 2px;
+      border: none;
+      background-color: transparent;
+      font-family: "Fira Mono";
+      font-weight: 600;
+      margin-left: 2em;
+      a {
+        text-wrap: nowrap;
+      }
+    }
+    .demo {
+      color: $accent;
     }
   }
   .fullStackButtonContainer {

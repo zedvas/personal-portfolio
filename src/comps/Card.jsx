@@ -96,7 +96,7 @@ export const Card = ({
               </button>
             )}
             {!portfolio && (
-              <button>
+              <button className="demo" >
                 <a href={demoLink} target="_blank">
                   Live demo
                 </a>

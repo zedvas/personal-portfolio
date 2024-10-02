@@ -10,6 +10,10 @@
   display: flex;
   justify-content: center;
 }
+.section:last-of-type {
+  min-height: unset;
+  min-height:600px
+}
 .page {
   width: 100%;
   max-width: 850px;
@@ -23,9 +27,7 @@
 .about {
   background-color: $lightdark;
 }
-.contact {
-  background-color: $lightdark;
-}
+
 .notFound {
   background-color: $darklight;
 }
@@ -33,7 +35,3 @@
   height: 100vh;
   overflow: hidden;
 }
-@media screen and (min-width: 600px) {
-  section:nth-last-child(1) {
-display: none;
-}}

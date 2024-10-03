@@ -4,14 +4,15 @@ import { JuggleContainer } from "../comps/JuggleContainer";
 import { Skills } from "../comps/Skills";
 import { TextChangeAnim } from "../comps/TextChangeAnim";
 import "../styles/about.scss";
+import { Jigsaw } from "../comps/Jigsaw";
+import { GameContainer } from "../comps/GameContainer";
 
-export const About = () => {
+export const About = ({animHandler,animOn,points}) => {
   return (
     <div className="about section" id="about">
       <div className="page">
         <div>
           <TextChangeAnim />
-
           <p className="desc">
             I’m Zahra, a software developer with a passion for problem-solving,
             a knack for producing innovative solutions, and a never-ending
@@ -21,12 +22,13 @@ export const About = () => {
             with others who share the same enthusiasm for innovation so do say
             hello
           </p>
-          <button>
+          <button className="pdf">
             <a href="/ZahraVasanji.pdf" target="_blank" download>
               <ArrowForward />
               take a look at my resume
             </a>
           </button>
+          <GameContainer animHandler={animHandler} animOn={animOn} points={points}/>
         </div>
       </div>
     </div>

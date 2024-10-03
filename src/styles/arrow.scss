@@ -1,0 +1,25 @@
+@import "variables";
+iframe {
+  border: none;
+}
+.arrow1 {
+  position: relative;
+  left: 67px;
+  bottom: -9px;
+ 
+  p {
+    font-size: 1rem;
+    transform: rotate(20deg);
+    position: absolute;
+    top: 1px;
+    right: -20px;
+  }
+}
+
+.arrow2 {display: flex;flex-direction: row-reverse;
+    position: absolute;bottom: 10px;
+    left: 50px;
+    p {
+        margin-top:15px;
+    }
+}

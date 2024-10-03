@@ -7,6 +7,7 @@ import "../styles/about.scss";
 import { Jigsaw } from "../comps/Jigsaw";
 import { GameContainer } from "../comps/GameContainer";
 import { useState } from "react";
+import { Arrow } from "../comps/Arrow";
 
 export const About = ({ animHandler, animOn, points }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +33,7 @@ export const About = ({ animHandler, animOn, points }) => {
               take a look at my resume
             </a>
           </button>
+          <Arrow arrowname="arrow2" src="https://giphy.com/embed/WSxuismGwJHM8CAvBW" text="open me"/>
 
           <GameContainer
             animHandler={animHandler}

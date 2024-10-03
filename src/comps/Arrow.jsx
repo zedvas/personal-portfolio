@@ -1,13 +1,14 @@
-export const Arrow = () => {
+import "../styles/arrow.scss";
+
+export const Arrow = ({ arrowname, src, text }) => {
   return (
-    <iframe
-      src="https://giphy.com/embed/MEKwzt0g0CLPEQvp0q"
-      width="480"
-      height="331"
-      style=""
-      frameBorder="0"
-      class="giphy-embed"
-      allowFullScreen
-    ></iframe>
+    <div className={arrowname}>
+      <p>{text}</p>
+      <iframe
+        src={src}
+        width="48"
+        height="33"
+      ></iframe>
+    </div>
   );
 };

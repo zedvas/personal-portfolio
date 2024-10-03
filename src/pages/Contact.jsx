@@ -1,3 +1,4 @@
+import { Arrow } from "../comps/Arrow";
 import { Form } from "../comps/Form";
 import { HeroVideo } from "../comps/HeroVideo";
 import { JuggleContainer } from "../comps/JuggleContainer";
@@ -8,6 +9,7 @@ export const Contact = ({ openReactModal, changeModalMessage }) => {
   return (
     <div className="contact section" id="contact">
       <div className="page">
+        <Arrow arrowname="arrow1" src="https://giphy.com/embed/MEKwzt0g0CLPEQvp0q" text="hover me"/>
         <div className="juggleWrapper">
           <JuggleContainer />
         </div>

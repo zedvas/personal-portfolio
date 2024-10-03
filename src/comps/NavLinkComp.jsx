@@ -9,7 +9,7 @@ export const NavLinkComp = ({ pathTo, interacted }) => {
 
   return (
     <li className="navLink">
-      <Link className={onHomepage ? "active onHomepage" : isActive ? "active" : ""} exact to={pathTo === "home" ? "/" : `/page#${pathTo}` }  data-replace={pathTo}>
+      <Link className={onHomepage ? "active onHomepage" : isActive ? "active" : ""} exact="true" to={pathTo === "home" ? "/" : `/page#${pathTo}` }  data-replace={pathTo}>
         <span>{pathTo}</span>
       </Link>
     </li>

@@ -34,6 +34,7 @@ export const Home = () => {
   // }, []);
 
   return (
+    
     <div className="home section" id="home" ref={homeRef}>
         <div className="page">
           <HeroAnim />

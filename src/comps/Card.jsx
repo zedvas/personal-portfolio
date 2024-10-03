@@ -13,7 +13,7 @@ export const Card = ({
   demoLink,
   portfolio,
 }) => {
-  const [overlayHidden, setoverlayHidden] = useState(true);
+  const [overlayHidden, setoverlayHidden] = useState(false);
   const toggleOverlay = () => {
     setoverlayHidden(!overlayHidden);}
 

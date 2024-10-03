@@ -3,7 +3,7 @@ import { HeroVideo } from "../comps/HeroVideo";
 import { JuggleContainer } from "../comps/JuggleContainer";
 import { Skills } from "../comps/Skills";
 import { TextChangeAnim } from "../comps/TextChangeAnim";
-import "../styles/about.scss"
+import "../styles/about.scss";
 
 export const About = () => {
   return (
@@ -13,9 +13,20 @@ export const About = () => {
           <TextChangeAnim />
 
           <p className="desc">
-          I’m Zahra, a software developer with a passion for problem-solving, a knack for producing innovative solutions, and a never-ending curiosity to keep expanding my knowledge. When I’m not busy crafting elegant code, you’ll find me hunched over a computer exploring the latest tech trends or tinkering with new tools. I’d love to connect with others who share the same enthusiasm for innovation so do say hello
+            I’m Zahra, a software developer with a passion for problem-solving,
+            a knack for producing innovative solutions, and a never-ending
+            curiosity to keep expanding my knowledge. When I’m not busy crafting
+            elegant code, you’ll find me hunched over a computer exploring the
+            latest tech trends or tinkering with new tools. I’d love to connect
+            with others who share the same enthusiasm for innovation so do say
+            hello
           </p>
-          <button><a href="/ZahraVasanji.pdf" target="_blank" download><ArrowForward />take a look at my resume</a></button>
+          <button>
+            <a href="/ZahraVasanji.pdf" target="_blank" download>
+              <ArrowForward />
+              take a look at my resume
+            </a>
+          </button>
         </div>
       </div>
     </div>

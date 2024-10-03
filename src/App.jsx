@@ -39,9 +39,9 @@ function App() {
       {/* <Spinner/> */}
       <Nav />
       <Routes>
-        <Route exact path="/" element={<Home />} />{" "}
+        <Route exact="true" path="/" element={<Home />} />{" "}
         <Route
-          exact
+          exact="true"
           path="/page"
           element={
             <Pages

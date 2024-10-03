@@ -19,15 +19,13 @@
       position: absolute;
       top: 0;
       right: 0;
-      z-index: 99;
+      z-index: 6;
       font-size: 2.2rem;
       margin: 0.5em 0.5em 0 0;
       background-color: $accent;
       border-radius: 50%;
       cursor: pointer;
       animation: spin 6s infinite;
-      ;
-      
     }
     svg.overlayHidden {
       background-color: $accent;
@@ -71,7 +69,7 @@
   div.overlayHidden {
     transform: translateX(-100%);
   }
-  
+
   div {
     width: 100%;
   }
@@ -130,7 +128,13 @@
 }
 
 @keyframes spin {
-  0% {transform: rotate(0deg);}
-  40% {transform: rotate(360deg);}
-  100% {transform: rotate(360deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }

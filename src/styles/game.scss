@@ -73,8 +73,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  h2 {
-  }
+
   .buttons {
     display: flex;
     button {
@@ -85,6 +84,10 @@
       margin: 0.2em;
       &:hover {
         background-color: $accent;
+      }
+      &:nth-child(1) {
+        background-color: black;
+        color:$light;
       }
     }
   }

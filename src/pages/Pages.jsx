@@ -4,6 +4,7 @@ import { Contact } from "./Contact";
 import { useEffect, useRef, useState } from "react";
 import { SportsBaseball } from "@mui/icons-material";
 import "../styles/game.scss";
+import { Jigsaw } from "../comps/Jigsaw";
 
 export const Pages = ({ openReactModal, changeModalMessage }) => {
   const about = useRef(null);

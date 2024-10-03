@@ -6,8 +6,12 @@ import { TextChangeAnim } from "../comps/TextChangeAnim";
 import "../styles/about.scss";
 import { Jigsaw } from "../comps/Jigsaw";
 import { GameContainer } from "../comps/GameContainer";
+import { useState } from "react";
 
-export const About = ({animHandler,animOn,points}) => {
+export const About = ({ animHandler, animOn, points }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [gameStarted, setGameStarted] = useState(false);
+
   return (
     <div className="about section" id="about">
       <div className="page">
@@ -28,8 +32,19 @@ export const About = ({animHandler,animOn,points}) => {
               take a look at my resume
             </a>
           </button>
-          <GameContainer animHandler={animHandler} animOn={animOn} points={points}/>
-        </div>
+
+          <GameContainer
+            animHandler={animHandler}
+            animOn={animOn}
+            points={points}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            gameStarted = {gameStarted}
+            setGameStarted ={setGameStarted}
+          />
+        </div>{" "}
+        {isOpen && !gameStarted ? <Jigsaw/> : ""}
+        
       </div>
     </div>
   );

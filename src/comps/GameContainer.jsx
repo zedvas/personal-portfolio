@@ -3,9 +3,7 @@ import "../styles/about.scss";
 import { Game } from "./Game";
 import { Jigsaw } from "./Jigsaw";
 
-export const GameContainer = ({animHandler,animOn,points}) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [gameStarted, setGameStarted] = useState(false);
+export const GameContainer = ({animHandler,animOn,points, isOpen, setIsOpen, gameStarted, setGameStarted}) => {
   const [count, setCount] = useState(3);
 
   useEffect(() => {
@@ -25,8 +23,9 @@ export const GameContainer = ({animHandler,animOn,points}) => {
     setGameStarted(!gameStarted);
 
   };
-  const peekabooHandler = () => {
+  const peekabooHandler = (e) => {
     if (isOpen) {
+      animHandler(e);
       setGameStarted(false);
       setCount(3);
 

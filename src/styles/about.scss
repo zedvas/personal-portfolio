@@ -21,6 +21,9 @@
     font-size: 1.2rem;
     font-weight: 100;
     margin: 2em 0;
+    .q {
+      opacity: 0;
+    }
   }
   //===================================================================================//
   //text change anim
@@ -63,4 +66,8 @@
   position: absolute;
   bottom: 75px;
   transform:scale(1.5)
+}
+p {
+  display: inline-block;
+  cursor:grab
 }

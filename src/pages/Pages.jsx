@@ -12,6 +12,7 @@ export const Pages = ({ openReactModal, changeModalMessage }) => {
   const contact = useRef(null);
   const [animOn, setAnimOn] = useState(false);
   const [points, setPoints] = useState(0);
+  const [count, setCount] = useState(3);
 
 
   useEffect(() => {
@@ -52,10 +53,10 @@ export const Pages = ({ openReactModal, changeModalMessage }) => {
     <div className="pages">
       <SportsBaseball
         onClick={animHandler}
-        className={animOn ? "basketballAnim basketball" : "basketball"}
+        className={count==="GO" ? "basketballAnim basketball" : "basketball"}
       />
       <div ref={about} >
-        <About animHandler={animHandler} animOn={animOn} points={points}/>
+        <About animHandler={animHandler} animOn={animOn} points={points} count={count} setCount={setCount}/>
       </div>
       <div ref={work}>
         <Work />

@@ -9,7 +9,7 @@ import { GameContainer } from "../comps/GameContainer";
 import { useState } from "react";
 import { Arrow } from "../comps/Arrow";
 
-export const About = ({ animHandler, animOn, points }) => {
+export const About = ({ animHandler, animOn, points , count, setCount}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
 
@@ -19,6 +19,7 @@ export const About = ({ animHandler, animOn, points }) => {
         <div>
           <TextChangeAnim />
           <p className="desc">
+
             I’m Zahra, a software developer with a passion for problem-solving,
             a knack for producing innovative solutions, and a never-ending
             curiosity to keep expanding my knowledge. When I’m not busy crafting
@@ -42,7 +43,7 @@ export const About = ({ animHandler, animOn, points }) => {
             isOpen={isOpen}
             setIsOpen={setIsOpen}
             gameStarted = {gameStarted}
-            setGameStarted ={setGameStarted}
+            setGameStarted ={setGameStarted} count={count} setCount={setCount}
           />
         </div>{" "}
         {isOpen && !gameStarted ? <Jigsaw/> : ""}

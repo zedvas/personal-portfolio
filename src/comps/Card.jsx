@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/card.scss";
 import { CardInfo } from "./CardInfo";
+import Draggable, { DraggableCore } from "react-draggable";
 
 export const Card = ({
   fullStack,
@@ -21,7 +22,7 @@ export const Card = ({
   return (
     <div className={fullStack ? "card fullstack" : "card"}>
       <a href={demoLink} target="_blank">
-        <h2>{title}</h2>
+        <h2>{Array.from(title).map(char=><span>{char}</span>)}</h2>
       </a>
       <CardInfo
         tools={tools}
@@ -38,7 +39,7 @@ export const Card = ({
         }
       >
         {fullStack ? (
-          <div className="fullStackButtons">
+          <Draggable><div className="fullStackButtons">
             <button>
               <a href={githubLink} target="_blank">
                 code - front
@@ -49,7 +50,7 @@ export const Card = ({
                 code - back
               </a>
             </button>
-          </div>
+          </div></Draggable>
         ) : (
           <button>
             <a href={githubLink} target="_blank">

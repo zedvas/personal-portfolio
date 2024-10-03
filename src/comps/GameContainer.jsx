@@ -3,8 +3,7 @@ import "../styles/about.scss";
 import { Game } from "./Game";
 import { Jigsaw } from "./Jigsaw";
 
-export const GameContainer = ({animHandler,animOn,points, isOpen, setIsOpen, gameStarted, setGameStarted}) => {
-  const [count, setCount] = useState(3);
+export const GameContainer = ({animHandler,animOn,points, isOpen, setIsOpen, gameStarted, setGameStarted, count, setCount}) => {
 
   useEffect(() => {
     if (gameStarted) {

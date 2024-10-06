@@ -3,6 +3,11 @@
 //===================================================================================//
 //skills
 .work {
+  .page {
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+  }
   position: relative;
   //   .skills {
   //     position: absolute;
@@ -69,7 +74,12 @@
 
   .projects {
     width: calc(100% - $navHeight - 1em);
-    display: flex;flex-direction: column;justify-content: center;align-items: center;
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 7em 0 5em 0;
   }
 
   @keyframes scroll {

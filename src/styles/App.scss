@@ -15,7 +15,7 @@
 }
 .page {
   width: 100%;
-  max-width: 850px;
+  max-width: 1200px;
 }
 .home {
   background-color: $lightdark;
@@ -34,4 +34,8 @@
 .disableScroll {
   height: 100vh;
   overflow: hidden;
+}
+@media screen and (min-height: 1200px){
+  .section.about, .section.work {min-height: 1200px;}
+ 
 }

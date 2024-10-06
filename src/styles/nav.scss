@@ -24,6 +24,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: 70%;
+    max-width: 800px;
   }
 
   a {
@@ -86,8 +87,8 @@ nav {
  
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 1150px) {
   nav {
-    left: calc(850px - $navHeight + (100vw - 850px) / 2);
+    left: calc(1150px - $navHeight + (100vw - 1150px) / 2);
   }
 }

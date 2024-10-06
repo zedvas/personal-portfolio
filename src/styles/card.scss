@@ -7,9 +7,6 @@
   align-items: flex-start;
   margin: 0 0 5em 3em;
   font-size: 1.2rem;
-  &:nth-child(1) {
-    margin-top: 5em;
-  }
   .container {
     position: relative;
     width: 75vw;
@@ -136,5 +133,11 @@
   }
   100% {
     transform: rotate(-360deg);
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .card .fullStackButtonContainer {
+    flex-direction: row;
   }
 }

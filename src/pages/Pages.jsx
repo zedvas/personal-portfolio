@@ -56,7 +56,7 @@ export const Pages = ({ openReactModal, changeModalMessage }) => {
         className={count==="GO" && animOn ? "basketballAnim basketball" : "basketball"}
       />
       <div ref={about} >
-        <About animHandler={animHandler} animOn={animOn} setAnimOn={setAnimOn} points={points} count={count} setCount={setCount}/>
+        <About animHandler={animHandler} animOn={animOn} setAnimOn={setAnimOn} points={points} setPoints={setPoints} count={count} setCount={setCount}/>
       </div>
       <div ref={work}>
         <Work />

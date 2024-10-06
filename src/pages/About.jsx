@@ -9,7 +9,15 @@ import { GameContainer } from "../comps/GameContainer";
 import { useState } from "react";
 import { Arrow } from "../comps/Arrow";
 
-export const About = ({ animHandler, animOn, setAnimOn, points , count, setCount}) => {
+export const About = ({
+  animHandler,
+  animOn,
+  setAnimOn,
+  points,
+  setPoints,
+  count,
+  setCount,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
 
@@ -19,7 +27,6 @@ export const About = ({ animHandler, animOn, setAnimOn, points , count, setCount
         <div>
           <TextChangeAnim />
           <p className="desc">
-
             I’m Zahra, a software developer with a passion for problem-solving,
             a knack for producing innovative solutions, and a never-ending
             curiosity to keep expanding my knowledge. When I’m not busy crafting
@@ -34,7 +41,11 @@ export const About = ({ animHandler, animOn, setAnimOn, points , count, setCount
               take a look at my resume
             </a>
           </button>
-          <Arrow arrowname="arrow2" src="https://giphy.com/embed/WSxuismGwJHM8CAvBW" text="open me"/>
+          <Arrow
+            arrowname="arrow2"
+            src="https://giphy.com/embed/WSxuismGwJHM8CAvBW"
+            text="open me"
+          />
 
           <GameContainer
             animHandler={animHandler}
@@ -43,12 +54,14 @@ export const About = ({ animHandler, animOn, setAnimOn, points , count, setCount
             points={points}
             isOpen={isOpen}
             setIsOpen={setIsOpen}
-            gameStarted = {gameStarted}
-            setGameStarted ={setGameStarted} count={count} setCount={setCount}
+            gameStarted={gameStarted}
+            setGameStarted={setGameStarted}
+            count={count}
+            setCount={setCount}
+            setPoints={setPoints}
           />
         </div>{" "}
-        {isOpen && !gameStarted ? <Jigsaw/> : ""}
-        
+        {isOpen && !gameStarted ? <Jigsaw /> : ""}
       </div>
     </div>
   );

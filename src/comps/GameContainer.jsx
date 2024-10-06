@@ -3,12 +3,28 @@ import "../styles/about.scss";
 import { Game } from "./Game";
 import { Jigsaw } from "./Jigsaw";
 
-export const GameContainer = ({animHandler,animOn,setAnimOn,points, isOpen, setIsOpen, gameStarted, setGameStarted, count, setCount}) => {
-
+export const GameContainer = ({
+  animHandler,
+  animOn,
+  setAnimOn,
+  points,
+  setPoints,
+  isOpen,
+  setIsOpen,
+  gameStarted,
+  setGameStarted,
+  count,
+  setCount,
+}) => {
   useEffect(() => {
     if (gameStarted) {
       let countdown = setInterval(() => {
         setCount((count) => {
+          if (isNaN(count)) {
+            setCount(3);
+            setAnimOn(false);
+            setPoints(0);
+          }
           if (count === 1) {
             clearInterval(countdown);
             setAnimOn(!animOn);
@@ -21,14 +37,13 @@ export const GameContainer = ({animHandler,animOn,setAnimOn,points, isOpen, setI
 
   const clickHandler = () => {
     setGameStarted(!gameStarted);
-
   };
   const peekabooHandler = (e) => {
     if (isOpen) {
       animHandler(e);
       setGameStarted(false);
       setCount(3);
-
+      setPoints(0);
     }
     setIsOpen(!isOpen);
   };
@@ -61,11 +76,13 @@ export const GameContainer = ({animHandler,animOn,setAnimOn,points, isOpen, setI
                 <button onClick={clickHandler}>ok</button>
               </div>
             </div>
-          ) : isOpen && gameStarted && count !== "GO"? (
+          ) : isOpen && gameStarted && count !== "GO" ? (
             <h2>click the ball to score a point in {count}</h2>
           ) : isOpen && gameStarted && count === "GO" ? (
-            <Game animHandler={animHandler} animOn={animOn} points={points}/> ): ""
-          }
+            <Game animHandler={animHandler} animOn={animOn} points={points} />
+          ) : (
+            ""
+          )}
         </div>
         <div className="right" onClick={peekabooHandler}>
           <p>psssttt...</p>

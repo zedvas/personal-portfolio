@@ -18,14 +18,14 @@ export const Pages = ({ openReactModal, changeModalMessage, activePage, setActiv
   useEffect(() => {
     const handleScroll = () => {
       const sections = [about, work, contact];
-      const scrollPosition = window.scrollY;
-
+      const scrollPosition = window.scrollY - window.innerHeight/-2
       sections.forEach((section) => {
         const top = section.current.offsetTop;
         const height = section.current.offsetHeight;
         const bottom = top + height;
 
-        if (scrollPosition >= top && scrollPosition < bottom) {
+        if (scrollPosition >= top && scrollPosition < bottom) {console.log(scrollPosition, top, bottom)
+
           window.history.replaceState(
             null,
             null,

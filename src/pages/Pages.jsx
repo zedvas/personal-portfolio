@@ -53,10 +53,10 @@ export const Pages = ({ openReactModal, changeModalMessage }) => {
     <div className="pages">
       <SportsBaseball
         onClick={animHandler}
-        className={count==="GO" ? "basketballAnim basketball" : "basketball"}
+        className={count==="GO" && animOn ? "basketballAnim basketball" : "basketball"}
       />
       <div ref={about} >
-        <About animHandler={animHandler} animOn={animOn} points={points} count={count} setCount={setCount}/>
+        <About animHandler={animHandler} animOn={animOn} setAnimOn={setAnimOn} points={points} count={count} setCount={setCount}/>
       </div>
       <div ref={work}>
         <Work />

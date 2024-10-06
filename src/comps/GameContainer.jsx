@@ -3,7 +3,7 @@ import "../styles/about.scss";
 import { Game } from "./Game";
 import { Jigsaw } from "./Jigsaw";
 
-export const GameContainer = ({animHandler,animOn,points, isOpen, setIsOpen, gameStarted, setGameStarted, count, setCount}) => {
+export const GameContainer = ({animHandler,animOn,setAnimOn,points, isOpen, setIsOpen, gameStarted, setGameStarted, count, setCount}) => {
 
   useEffect(() => {
     if (gameStarted) {
@@ -11,6 +11,7 @@ export const GameContainer = ({animHandler,animOn,points, isOpen, setIsOpen, gam
         setCount((count) => {
           if (count === 1) {
             clearInterval(countdown);
+            setAnimOn(!animOn);
             return "GO";
           } else return count - 1;
         });

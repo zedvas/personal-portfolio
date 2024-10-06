@@ -9,7 +9,7 @@ import { GameContainer } from "../comps/GameContainer";
 import { useState } from "react";
 import { Arrow } from "../comps/Arrow";
 
-export const About = ({ animHandler, animOn, points , count, setCount}) => {
+export const About = ({ animHandler, animOn, setAnimOn, points , count, setCount}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
 
@@ -39,6 +39,7 @@ export const About = ({ animHandler, animOn, points , count, setCount}) => {
           <GameContainer
             animHandler={animHandler}
             animOn={animOn}
+            setAnimOn={setAnimOn}
             points={points}
             isOpen={isOpen}
             setIsOpen={setIsOpen}

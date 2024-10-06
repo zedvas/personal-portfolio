@@ -2,23 +2,16 @@ import { NavLinkComp } from "./NavLinkComp";
 import "../styles/nav.scss";
 import { useState } from "react";
 
-export const Nav = () => {
+export const Nav = ({activePage, setActivePage}) => {
   const navLinks = ["home", "about", "work", "contact"];
-  const [interacted, setInteracted] = useState(false);
 
-  const clickHandler = (e) => {
-    const link = e.target.innerText;
-    if (link === "about" || link === "work" || link === "contact") {
-      setInteracted(true);
-    }
-  };
 
   return (
-    <nav className="p-header__nav p-nav">
-      <ul className="p-nav__lists" onClick={clickHandler}>
+    <nav>
+      <ul>
         {navLinks.map((navLink, index) => {
           return (
-            <NavLinkComp pathTo={navLink} key={index} interacted={interacted} />
+            <NavLinkComp pathTo={navLink} key={index} activePage={activePage} setActivePage={setActivePage}/>
           );
         })}
       </ul>

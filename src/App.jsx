@@ -16,6 +16,7 @@ import { NotFound } from "./comps/NotFound";
 function App() {
   const [reactModalIsOpen, setReactModalIsOpen] = useState(false);
   const [modalText, setModalText] = useState("");
+  const [activePage, setActivePage] = useState("");
 
   const openReactModal = () => {
     setReactModalIsOpen(true);
@@ -37,7 +38,7 @@ function App() {
         modalText={modalText}
       />
       {/* <Spinner/> */}
-      <Nav />
+      <Nav activePage={activePage} setActivePage={setActivePage}/>
       <Routes>
         <Route exact="true" path="/" element={<Home />} />{" "}
         <Route
@@ -46,7 +47,7 @@ function App() {
           element={
             <Pages
               openReactModal={openReactModal}
-              changeModalMessage={changeModalMessage}
+              changeModalMessage={changeModalMessage} activePage={activePage} setActivePage={setActivePage}
             />
           }
         />{" "}

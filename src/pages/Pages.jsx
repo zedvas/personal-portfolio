@@ -6,7 +6,7 @@ import { SportsBaseball } from "@mui/icons-material";
 import "../styles/game.scss";
 import { Jigsaw } from "../comps/Jigsaw";
 
-export const Pages = ({ openReactModal, changeModalMessage }) => {
+export const Pages = ({ openReactModal, changeModalMessage, activePage, setActivePage }) => {
   const about = useRef(null);
   const work = useRef(null);
   const contact = useRef(null);
@@ -31,6 +31,7 @@ export const Pages = ({ openReactModal, changeModalMessage }) => {
             null,
             `#${section.current.firstChild.id}`
           );
+          setActivePage(section.current.firstChild.id)
         }
       });
     };

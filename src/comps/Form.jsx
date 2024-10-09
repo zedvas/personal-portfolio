@@ -82,23 +82,25 @@ export const Form = ({ openReactModal, changeModalMessage }) => {
 
   return (
     <form ref={form} onSubmit={sendEmail}>
-      <label htmlFor="#name">name</label>
+      <label htmlFor="name">name</label>
       <input
         type="text"
         name="from_name"
         id="name"
         value={formValues.from_name}
         onChange={changeHandler}
+        autoComplete="true"
       />
-      <label htmlFor="#email">email</label>
+      <label htmlFor="email">email</label>
       <input
         type="email"
         name="from_email"
         id="email"
         value={formValues.email}
         onChange={changeHandler}
+        autoComplete="true"
       />
-      <label htmlFor="#message">message</label>
+      <label htmlFor="message">message</label>
       <textarea
         type="text"
         name="message"

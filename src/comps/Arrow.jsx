@@ -2,7 +2,7 @@ import "../styles/arrow.scss";
 
 export const Arrow = ({ arrowname, src, text }) => {
   return (
-    <div className={arrowname}>
+    <div className={arrowname} aria-hidden="true">
       <p>{text}</p>
       <iframe
         src={src}

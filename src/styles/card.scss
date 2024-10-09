@@ -99,10 +99,10 @@
       background-color: transparent;
       font-family: "Fira Mono";
       font-weight: 600;
-      margin-left: 2em;
+     
       a {
         color: $black;
-        text-wrap: nowrap;
+        text-wrap: nowrap; padding-right: 2.4em;
         &:hover {
           color: $accent;
         }

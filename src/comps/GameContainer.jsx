@@ -84,7 +84,7 @@ export const GameContainer = ({
             ""
           )}
         </div>
-        <div className="right" onClick={peekabooHandler}>
+        <div className="right" onClick={peekabooHandler} aria-hidden="true">
           <p>psssttt...</p>
         </div>
       </div>

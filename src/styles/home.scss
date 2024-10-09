@@ -4,7 +4,9 @@
 //HERO
 
 .home {
-  position: relative;display: flex;align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
   .heroAnim {
     // margin-top: 50vh;
     // transform: translateY(-50%);
@@ -91,7 +93,7 @@
     position: absolute;
     left: 50%;
     margin-left: -30px;
-    bottom: 50px;
+    bottom: 40px;
     display: flex;
     flex-direction: column;
   }
@@ -107,14 +109,20 @@
   .a1 {
     animation: a1 2s infinite;
     -webkit-animation: a1 2s infinite;
+    animation-delay: 0s;
+    -webkit-animation-delay: 0s; /* Safari 和 Chrome */
   }
   .a2 {
     animation: a2 2s infinite;
     -webkit-animation: a1 2s infinite;
+    animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s; /* Safari 和 Chrome */
   }
   .a3 {
-    animation: a3 1.5s infinite;
+    animation: a3 2s infinite;
     -webkit-animation: a1 2s infinite;
+    animation-delay: 1s;
+    -webkit-animation-delay: 1s; /* Safari 和 Chrome */
   }
 
   @keyframes arrow {

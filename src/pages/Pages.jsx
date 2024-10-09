@@ -24,7 +24,7 @@ export const Pages = ({ openReactModal, changeModalMessage, activePage, setActiv
         const height = section.current.offsetHeight;
         const bottom = top + height;
 
-        if (scrollPosition >= top && scrollPosition < bottom) {console.log(scrollPosition, top, bottom)
+        if (scrollPosition >= top && scrollPosition < bottom) {
 
           window.history.replaceState(
             null,

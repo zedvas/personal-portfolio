@@ -36,7 +36,7 @@ export const About = ({
             hello
           </p>
           <button className="pdf">
-            <a href="/ZahraVasanji.pdf" target="_blank" download>
+            <a href="/Zahra_Vasanji_CV.pdf" target="_blank" download>
               <ArrowForward />
               take a look at my resume
             </a>

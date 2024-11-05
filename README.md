@@ -1,8 +1,11 @@
-# React + Vite
+# Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a personal portfolio website built with React, showcasing dynamic routing and optimized performance using Vite. It includes a contact form powered by EmailJS and modals using React Modal, providing a professional and responsive portfolio experience.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+
+React, React Router, Joi, React Modal, EmailJS, Vite, Material UI
+
+## Demo
+https://zahravasanji.com/
